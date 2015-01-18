@@ -1,8 +1,3 @@
-/*******************************************************/
-//
-//
-/*******************************************************/
-
 #ifndef GAMEENGINE_H
 #define GAMEENGINE_H
 
@@ -11,6 +6,7 @@
 class GameEngine : public QObject
 {
     Q_OBJECT
+
 public:
     explicit GameEngine(QObject *parent = 0);
     ~GameEngine();
@@ -18,6 +14,7 @@ public:
 signals:
 
 public slots:
+
 };
 
 #endif // GAMEENGINE_H

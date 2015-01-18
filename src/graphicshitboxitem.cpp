@@ -1,4 +1,5 @@
 #include "graphicshitboxitem.h"
+#include "graphicstoneitem.h"
 
 #include <QPen>
 #include <QDebug>
@@ -36,6 +37,13 @@ void graphicsHitboxItem::hoverLeaveEvent(QGraphicsSceneHoverEvent* event)
     qDebug() << "LEAVE FUCK";
     setBrush( QBrush(Qt::transparent) );
     QGraphicsRectItem::hoverLeaveEvent(event);
+}
+
+void graphicsHitboxItem::mousePressEvent(QGraphicsSceneMouseEvent * event)
+{
+    qDebug() << "MOUSE PRESS EVENT ON HITBOX";
+    GraphicStoneITem* shit = new GraphicStoneITem(0, this);
+
 }
 
 graphicsHitboxItem::~graphicsHitboxItem()

@@ -7,7 +7,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+
 #include "gobanscene.h"
+#include "gamehud.h"
+#include "gameengine.h"
 
 namespace Ui {
 class MainWindow;
@@ -24,6 +27,8 @@ public:
 private:
     Ui::MainWindow *ui;
     GobanScene* goban_scene;
+    GameHud* Hud;
+    GameEngine* Gomengine;
 };
 
 #endif // MAINWINDOW_H

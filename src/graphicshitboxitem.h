@@ -13,6 +13,8 @@ public:
 protected:
     virtual void ​hoverEnterEvent(QGraphicsSceneHoverEvent* event);
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent * event);
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent * event);
+
 private:
     void initialisation();
 };

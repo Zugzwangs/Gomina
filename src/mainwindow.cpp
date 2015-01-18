@@ -6,6 +6,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+
 MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
@@ -19,7 +20,10 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainW
     ui->goban_view->setScene(goban_scene);
 
     // setup the HUD part
+    Hud = new GameHud(this);
 
+    // setup the game's engine
+    Gomengine = new GameEngine(this);
 }
 
 MainWindow::~MainWindow()
