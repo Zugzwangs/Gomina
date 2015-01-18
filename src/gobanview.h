@@ -1,3 +1,8 @@
+/*******************************************************/
+//
+//
+/*******************************************************/
+
 #ifndef GOBANVIEW_H
 #define GOBANVIEW_H
 
@@ -8,7 +13,7 @@ class GobanView : public QGraphicsView
     Q_OBJECT
 
 public:
-    GobanView();
+    GobanView(QWidget *parent = 0);
     ~GobanView();
 };
 
