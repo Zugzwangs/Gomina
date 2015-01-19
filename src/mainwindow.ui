@@ -51,6 +51,37 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="GameHud" name="scrollArea">
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>335</width>
+            <height>724</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>
@@ -97,6 +128,12 @@
    <class>GobanView</class>
    <extends>QGraphicsView</extends>
    <header location="global">gobanview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>GameHud</class>
+   <extends>QScrollArea</extends>
+   <header location="global">gamehud.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
