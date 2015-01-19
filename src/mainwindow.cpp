@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainW
     ui->goban_view->setScene(goban_scene);
 
     // setup the HUD part
-    Hud = new GameHud(this);
+    Hud = new GameHud(ui->HudFrame);
 
     // setup the game's engine
     Gomengine = new GameEngine(this);

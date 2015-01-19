@@ -4,5 +4,6 @@
         <file>res/texture - Goban.jpg</file>
         <file>res/black_stone.png</file>
         <file>res/white_stone.png</file>
+        <file>res/goban_background.jpg</file>
     </qresource>
 </RCC>
