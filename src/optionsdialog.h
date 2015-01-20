@@ -8,9 +8,7 @@
 
 #include <QDialog>
 
-namespace Ui {
-class OptionsDialog;
-}
+namespace Ui {  class OptionsDialog;    }
 
 class OptionsDialog : public QDialog
 {

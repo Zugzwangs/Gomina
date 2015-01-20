@@ -7,6 +7,8 @@
 #define GOBAN_H
 
 #include <QObject>
+#include <QSize>
+#include <QPoint>
 
 class Goban : public QObject
 {
@@ -15,11 +17,18 @@ class Goban : public QObject
 public:
     explicit Goban(QObject *parent = 0);
     ~Goban();
+    int getHeight();
+    int getWidth();
+    QSize getSize();
+    int getValue(int x, int y);
+    int getValue(QPoint p);
 
 private:
-    //choose the right data's structure
+    QSize size;
+
 
 signals:
+    void changed();
 
 public slots:
 

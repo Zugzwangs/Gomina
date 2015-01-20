@@ -7,7 +7,7 @@
 #include "ui_mainwindow.h"
 
 
-MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainWindow)
+MainWindow::MainWindow(GameEngine *GE, QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
@@ -22,8 +22,8 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainW
     // setup the HUD part
     Hud = new GameHud(ui->HudFrame);
 
-    // setup the game's engine
-    Gomengine = new GameEngine(this);
+    // store the pointer to the game's engine
+    Gomenige = GE;
 }
 
 MainWindow::~MainWindow()
