@@ -34,12 +34,12 @@ SOURCES +=  main.cpp \
             gameengine.cpp \
             optionsdialog.cpp \
             gamehud.cpp \
-    cpuplayer.cpp \
-    graphicstoneitem.cpp \
-    graphicsgobanitem.cpp \
-    graphicshitboxitem.cpp \
-    playerhud.cpp \
-    historicalhud.cpp
+            cpuplayer.cpp \
+            graphicstoneitem.cpp \
+            graphicsgobanitem.cpp \
+            graphicshitboxitem.cpp \
+            playerhud.cpp \
+            historicalhud.cpp
 
 HEADERS +=  mainwindow.h \
             gobanview.h \
@@ -48,18 +48,18 @@ HEADERS +=  mainwindow.h \
             gameengine.h \
             optionsdialog.h \
             gamehud.h \
-    cpuplayer.h \
-    graphicstoneitem.h \
-    graphicsgobanitem.h \
-    graphicshitboxitem.h \
-    playerhud.h \
-    historicalhud.h
+            cpuplayer.h \
+            graphicstoneitem.h \
+            graphicsgobanitem.h \
+            graphicshitboxitem.h \
+            playerhud.h \
+            historicalhud.h
 
 FORMS   +=  mainwindow.ui \
             optionsdialog.ui \
             gamehud.ui \
-    playerhud.ui \
-    historicalhud.ui
+            playerhud.ui \
+            historicalhud.ui
 
 OTHER_FILES += vectorAddition.cu    # This makes the .cu files appear in your project
 

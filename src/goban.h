@@ -25,7 +25,7 @@ public:
 
 private:
     QSize size;
-
+    QVector<int> gob;
 
 signals:
     void changed();
