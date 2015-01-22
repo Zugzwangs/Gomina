@@ -9,6 +9,7 @@
 #include <QObject>
 #include <QSize>
 #include <QPoint>
+#include <QVector>
 
 class Goban : public QObject
 {
@@ -20,12 +21,14 @@ public:
     int getHeight();
     int getWidth();
     QSize getSize();
+    void setSize(QSize s);
     int getValue(int x, int y);
     int getValue(QPoint p);
+    void setValue(QPoint p, int v);
 
 private:
     QSize size;
-    QVector<int> gob;
+    QVector<int> grid;
 
 signals:
     void changed();

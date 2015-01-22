@@ -20,6 +20,9 @@ signals:
 
 public slots:
 
+private:
+    Goban* myGoban;
+
 };
 
 #endif // GAMEENGINE_H

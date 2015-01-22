@@ -7,7 +7,11 @@
 
 GameEngine::GameEngine(QObject *parent) : QObject(parent)
 {
-//build goban structure
+
+    //build goban data structure
+    myGoban = new Goban(this);
+
+    //initiate states of components
 
 }
 
