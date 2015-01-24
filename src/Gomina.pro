@@ -45,7 +45,8 @@ SOURCES +=  main.cpp \
             humanplayer.cpp \
             gamearbiter.cpp \
             gamehistory.cpp \
-    pathprovider.cpp
+            pathprovider.cpp \
+            logmanager.cpp
 
 HEADERS +=  gui/mainwindow.h \
             gui/gobanview.h \
@@ -65,7 +66,8 @@ HEADERS +=  gui/mainwindow.h \
             humanplayer.h \
             gamearbiter.h \
             gamehistory.h \
-    pathprovider.h
+            pathprovider.h \
+            logmanager.h
 
 FORMS   +=  gui/mainwindow.ui \
             gui/optionsdialog.ui \
