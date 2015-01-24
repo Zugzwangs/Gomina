@@ -35,17 +35,17 @@ void Goban::setSize(QSize s)
 
 int Goban::getValue(int x, int y)
 {
-    grid.resize( x*y );
+    return grid.at( x+y*size.width() );
 }
 
 int Goban::getValue(QPoint p)
 {
-    grid.at( p.x+p.y*size.height() );
+    return grid.at( p.x()+p.y()*size.width() );
 }
 
 void Goban::setValue(QPoint p, int v)
 {
-    grid[ p.x+p.y*size.height() ] = v;
+    grid[ p.x()+p.y()*size.height() ] = v;
 }
 
 Goban::~Goban()

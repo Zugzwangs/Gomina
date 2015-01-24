@@ -7,6 +7,7 @@
 #define GAMEENGINE_H
 
 #include <QObject>
+#include "goban.h"
 
 class GameEngine : public QObject
 {

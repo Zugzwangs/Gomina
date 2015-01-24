@@ -6,11 +6,12 @@
 #ifndef CPUPLAYER_H
 #define CPUPLAYER_H
 
-#include <QObject>
+#include "player.h"
 
-class CpuPlayer : public QObject
+class CpuPlayer : public Player
 {
     Q_OBJECT
+
 public:
     explicit CpuPlayer(QObject *parent = 0);
     ~CpuPlayer();

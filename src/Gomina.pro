@@ -27,39 +27,46 @@ RCC_DIR = $${MODE_PWD}/rcc
 
 # All input files
 SOURCES +=  main.cpp \
-            mainwindow.cpp \
-            gobanview.cpp \
-            gobanscene.cpp \
-            goban.cpp \
+            gui/mainwindow.cpp \
+            gui/gobanview.cpp \
+            gui/gobanscene.cpp \
+            gui/optionsdialog.cpp \
+            gui/gamehud.cpp \
+            gui/graphicstoneitem.cpp \
+            gui/graphicsgobanitem.cpp \
+            gui/graphicshitboxitem.cpp \
+            gui/playerhud.cpp \
+            gui/historicalhud.cpp \
             gameengine.cpp \
-            optionsdialog.cpp \
-            gamehud.cpp \
+            goban.cpp \
             cpuplayer.cpp \
-            graphicstoneitem.cpp \
-            graphicsgobanitem.cpp \
-            graphicshitboxitem.cpp \
-            playerhud.cpp \
-            historicalhud.cpp
+            gui/chatwindow.cpp \
+            player.cpp \
+            humanplayer.cpp
 
-HEADERS +=  mainwindow.h \
-            gobanview.h \
-            gobanscene.h \
-            goban.h \
+HEADERS +=  gui/mainwindow.h \
+            gui/gobanview.h \
+            gui/gobanscene.h \
+            gui/optionsdialog.h \
+            gui/gamehud.h \
+            gui/graphicstoneitem.h \
+            gui/graphicsgobanitem.h \
+            gui/graphicshitboxitem.h \
+            gui/playerhud.h \
+            gui/historicalhud.h \
             gameengine.h \
-            optionsdialog.h \
-            gamehud.h \
+            goban.h \
             cpuplayer.h \
-            graphicstoneitem.h \
-            graphicsgobanitem.h \
-            graphicshitboxitem.h \
-            playerhud.h \
-            historicalhud.h
+            gui/chatwindow.h \
+            player.h \
+            humanplayer.h
 
-FORMS   +=  mainwindow.ui \
-            optionsdialog.ui \
-            gamehud.ui \
-            playerhud.ui \
-            historicalhud.ui
+FORMS   +=  gui/mainwindow.ui \
+            gui/optionsdialog.ui \
+            gui/gamehud.ui \
+            gui/playerhud.ui \
+            gui/historicalhud.ui \
+            gui/chatwindow.ui
 
 OTHER_FILES += vectorAddition.cu    # This makes the .cu files appear in your project
 

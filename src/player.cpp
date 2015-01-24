@@ -3,14 +3,14 @@
 //
 /*******************************************************/
 
-#include "cpuplayer.h"
+#include "player.h"
 
-CpuPlayer::CpuPlayer(QObject *parent) : Player(parent)
+Player::Player(QObject *parent) : QObject(parent)
 {
 
 }
 
-CpuPlayer::~CpuPlayer()
+Player::~Player()
 {
 
 }
