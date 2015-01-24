@@ -42,7 +42,10 @@ SOURCES +=  main.cpp \
             cpuplayer.cpp \
             gui/chatwindow.cpp \
             player.cpp \
-            humanplayer.cpp
+            humanplayer.cpp \
+            gamearbiter.cpp \
+            gamehistory.cpp \
+    pathprovider.cpp
 
 HEADERS +=  gui/mainwindow.h \
             gui/gobanview.h \
@@ -59,7 +62,10 @@ HEADERS +=  gui/mainwindow.h \
             cpuplayer.h \
             gui/chatwindow.h \
             player.h \
-            humanplayer.h
+            humanplayer.h \
+            gamearbiter.h \
+            gamehistory.h \
+    pathprovider.h
 
 FORMS   +=  gui/mainwindow.ui \
             gui/optionsdialog.ui \
