@@ -1,5 +1,5 @@
 
-skins alternatifs fun/stylé des pierres
+skins alternatifs fun/stylé des pierres/du Goban et du background
 
 easter egg du genre une animation genre tetris sur le goban (a voir le déclenchement)
 
@@ -8,3 +8,5 @@ une gestion du Blitz
 installer et test un logiciel déjà existant
 
 se rencarder sur l'api a offrir pour une utilisation du soft sur les serveurs de go bot
+
+export de position de partie
