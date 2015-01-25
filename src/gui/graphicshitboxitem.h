@@ -7,6 +7,7 @@
 #define GRAPHICSHITBOXITEM_H
 
 #include <QGraphicsRectItem>
+#include <QGraphicsSceneHoverEvent>
 
 class graphicsHitboxItem : public QGraphicsRectItem
 {
@@ -17,8 +18,8 @@ public:
 
 protected:
     virtual void ​hoverEnterEvent(QGraphicsSceneHoverEvent* event);
-    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent * event);
-    virtual void mousePressEvent(QGraphicsSceneMouseEvent * event);
+    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent* event);
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
 
 private:
     void initialisation();

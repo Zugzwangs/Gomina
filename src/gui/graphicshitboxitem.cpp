@@ -32,22 +32,24 @@ void graphicsHitboxItem::initialisation()
 
 void graphicsHitboxItem::​hoverEnterEvent(QGraphicsSceneHoverEvent* event)
 {
-    qDebug() << "ENTER FUCK";
+    qDebug() << "graphicsHitboxItem::​hoverEnterEvent() !!!!!";
     setBrush( QBrush(Qt::blue) );
     QGraphicsRectItem::hoverEnterEvent(event);
 }
 
 void graphicsHitboxItem::hoverLeaveEvent(QGraphicsSceneHoverEvent* event)
 {
-    qDebug() << "LEAVE FUCK";
+    qDebug() << "graphicsHitboxItem::hoverLeaveEvent()";
     setBrush( QBrush(Qt::transparent) );
     QGraphicsRectItem::hoverLeaveEvent(event);
+
 }
 
 void graphicsHitboxItem::mousePressEvent(QGraphicsSceneMouseEvent * event)
 {
     qDebug() << "MOUSE PRESS EVENT ON HITBOX";
     GraphicStoneITem* shit = new GraphicStoneITem(0, this);
+    shit->setPos(this->pos());
 
 }
 

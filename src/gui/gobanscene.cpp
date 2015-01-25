@@ -13,6 +13,7 @@ GobanScene::GobanScene(QObject* parent) : QGraphicsScene(parent)
 {
     // by default build a 19*19 Goban
     createGoban(19);
+    // behavior
 }
 
 void GobanScene::createGoban(int gobanSize)
@@ -30,7 +31,6 @@ void GobanScene::createGoban(int gobanSize)
     // create the board
     GraphicsGobanItem *gobanItem = new GraphicsGobanItem(gobanSize);
     this->addItem(gobanItem);
-
 }
 
 

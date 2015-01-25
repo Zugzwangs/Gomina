@@ -46,7 +46,8 @@ SOURCES +=  main.cpp \
             gamearbiter.cpp \
             gamehistory.cpp \
             pathprovider.cpp \
-            logmanager.cpp
+            logmanager.cpp \
+            blitz.cpp
 
 HEADERS +=  gui/mainwindow.h \
             gui/gobanview.h \
@@ -67,7 +68,8 @@ HEADERS +=  gui/mainwindow.h \
             gamearbiter.h \
             gamehistory.h \
             pathprovider.h \
-            logmanager.h
+            logmanager.h \
+            blitz.h
 
 FORMS   +=  gui/mainwindow.ui \
             gui/optionsdialog.ui \
@@ -132,3 +134,8 @@ RC_FILE = logo_link.rc
 #    cuda.dependency_type = TYPE_C
 #    #QMAKE_EXTRA_COMPILERS += cuda
 #}
+
+#--------------------------------------------------
+# custom deployment step
+#--------------------------------------------------
+# ??
