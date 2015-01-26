@@ -31,7 +31,7 @@ protected:
 private:
     uint GobanWidth;
     uint GobanHeight;
-    QPoint coord2Pos(QPoint p);
+    QPointF coord2Pos(QPoint p);
 };
 
 #endif // GRAPHICSGOBANITEM_H

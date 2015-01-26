@@ -9,6 +9,7 @@
 #include <QPen>
 #include <QDebug>
 #include <QGraphicsLineItem>
+#include <QGraphicsTextItem>
 #include <QGraphicsEllipseItem>
 
 GraphicsGobanItem::GraphicsGobanItem(int gobanSize, QGraphicsItem* parent) : QGraphicsRectItem(parent)
@@ -47,12 +48,8 @@ GraphicsGobanItem::GraphicsGobanItem(int gobanSize, QGraphicsItem* parent) : QGr
     if ( gobanSize == 19)
         {
         //create an hoshi at case P(x,y):
-        int _x = 3;
-        int _y = 3;
-        int _x_pos = GOBAN_BORDER_THICKNESS + _x*(GOBAN_STEP_SIZE_WIDTH+GOBAN_LINE_THICKNESS) - GOBAN_HOSHI_RADIUS/2 - GOBAN_LINE_THICKNESS/2;
-        int _y_pos = GOBAN_BORDER_THICKNESS + _y*(GOBAN_STEP_SIZE_HEIGHT+GOBAN_LINE_THICKNESS) - GOBAN_HOSHI_RADIUS/2;
-        QRectF hoshi_rect(_x_pos, _y_pos, GOBAN_HOSHI_RADIUS, GOBAN_HOSHI_RADIUS);
-        hoshi_rect.moveCenter();
+        QRectF hoshi_rect(0, 0, GOBAN_HOSHI_RADIUS, GOBAN_HOSHI_RADIUS);
+        hoshi_rect.moveCenter( coord2Pos(QPoint(3, 3)) );
         QGraphicsEllipseItem* hoshi = new QGraphicsEllipseItem(hoshi_rect, this);
         hoshi->setBrush( QBrush(Qt::black, Qt::SolidPattern) );
         }
@@ -69,15 +66,26 @@ GraphicsGobanItem::GraphicsGobanItem(int gobanSize, QGraphicsItem* parent) : QGr
             }
         }
 
+    // build Letters
+    for(int i=0; i<gobanSize; i++)
+        {
+        tempX = GOBAN_BORDER_THICKNESS + i*GOBAN_STEP_SIZE_WIDTH  + i*GOBAN_LINE_THICKNESS;
+        tempY = GOBAN_BORDER_THICKNESS + j*GOBAN_STEP_SIZE_HEIGHT + j*GOBAN_LINE_THICKNESS;
+        QGraphicsTextItem* crtLetter = new QGraphicsTextItem("A", this);
+        }
+
     // set behavior
     setAcceptHoverEvents(true);
     setFlag( QGraphicsItem::ItemIsMovable, false);
     setFlag( QGraphicsItem::ItemIsSelectable, false);
 }
 
-QPoint GraphicsGobanItem::coord2Pos(QPoint p)
+// convert a game position to coord in Goban coord
+QPointF GraphicsGobanItem::coord2Pos(QPoint p)
 {
-
+    int _x_pos = GOBAN_BORDER_THICKNESS + p.x()*(GOBAN_STEP_SIZE_WIDTH+GOBAN_LINE_THICKNESS);
+    int _y_pos = GOBAN_BORDER_THICKNESS + p.y()*(GOBAN_STEP_SIZE_HEIGHT+GOBAN_LINE_THICKNESS);
+    return QPointF(_x_pos, _y_pos);
 }
 
 void GraphicsGobanItem::​hoverEnterEvent(QGraphicsSceneHoverEvent* event)
