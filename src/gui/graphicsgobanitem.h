@@ -32,6 +32,8 @@ private:
     uint GobanWidth;
     uint GobanHeight;
     QPointF coord2Pos(QPoint p);
+    static QStringList LetterList;
+    static QStringList NumberList;
 };
 
 #endif // GRAPHICSGOBANITEM_H

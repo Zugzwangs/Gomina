@@ -7,13 +7,21 @@
 #include "graphicshitboxitem.h"
 
 #include <QPen>
+#include <QFont>
 #include <QDebug>
 #include <QGraphicsLineItem>
 #include <QGraphicsTextItem>
 #include <QGraphicsEllipseItem>
 
+QStringList GraphicsGobanItem::LetterList = QStringList() << "A" << "B" << "C" << "D" << "E" << "F" << "G" << "H" << "J" << "K" << "L" << "M" << "N" << "O" << "P" << "Q" << "R" << "S" << "T";
+QStringList GraphicsGobanItem::NumberList = QStringList() << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "10" << "11" << "12" << "13" << "14" << "15" << "16" << "17" << "18" << "19";
+
 GraphicsGobanItem::GraphicsGobanItem(int gobanSize, QGraphicsItem* parent) : QGraphicsRectItem(parent)
 {
+    // if goban size is incorrect set it to the default value
+    if ( gobanSize < 1 || gobanSize > 19)
+        gobanSize = 19;
+
     // compute the size of the board
     GobanWidth  = (gobanSize-1) * (GOBAN_STEP_SIZE_WIDTH + GOBAN_LINE_THICKNESS) + 2*GOBAN_BORDER_THICKNESS;
     GobanHeight = (gobanSize-1) * (GOBAN_STEP_SIZE_HEIGHT+ GOBAN_LINE_THICKNESS) + 2*GOBAN_BORDER_THICKNESS;
@@ -44,7 +52,6 @@ GraphicsGobanItem::GraphicsGobanItem(int gobanSize, QGraphicsItem* parent) : QGr
         }
 
     // build the hoshi (only in the case of a 19x19 goban)
-
     if ( gobanSize == 19)
         {
         //create an hoshi at case P(x,y):
@@ -70,8 +77,19 @@ GraphicsGobanItem::GraphicsGobanItem(int gobanSize, QGraphicsItem* parent) : QGr
     for(int i=0; i<gobanSize; i++)
         {
         tempX = GOBAN_BORDER_THICKNESS + i*GOBAN_STEP_SIZE_WIDTH  + i*GOBAN_LINE_THICKNESS;
-        tempY = GOBAN_BORDER_THICKNESS + j*GOBAN_STEP_SIZE_HEIGHT + j*GOBAN_LINE_THICKNESS;
-        QGraphicsTextItem* crtLetter = new QGraphicsTextItem("A", this);
+        tempY = GOBAN_BORDER_THICKNESS + i*GOBAN_STEP_SIZE_HEIGHT + i*GOBAN_LINE_THICKNESS;
+        QGraphicsTextItem* crtLetterTop = new QGraphicsTextItem(LetterList.at(i), this);
+        QGraphicsTextItem* crtLetterDown = new QGraphicsTextItem(LetterList.at(i), this);
+        QGraphicsTextItem* crtNumberLeft = new QGraphicsTextItem(NumberList.at(i), this);
+        QGraphicsTextItem* crtNumberRight = new QGraphicsTextItem(NumberList.at(i), this);
+        crtLetterTop->setFont(QFont("Arial", 6));
+        crtLetterTop->setPos(tempX - crtLetterTop->boundingRect().width()/2, 0);
+        crtLetterDown->setFont(QFont("Arial", 6));
+        crtLetterDown->setPos(tempX - crtLetterDown->boundingRect().width()/2, GobanHeight-crtLetterDown->boundingRect().width());
+        crtNumberLeft->setFont(QFont("Arial", 6));
+        crtNumberLeft->setPos(0, tempY - crtNumberLeft->boundingRect().height()/2);
+        crtNumberRight->setFont(QFont("Arial", 6));
+        crtNumberRight->setPos(GobanWidth-crtNumberRight->boundingRect().width(), tempY - crtNumberRight->boundingRect().height()/2);
         }
 
     // set behavior
