@@ -47,7 +47,9 @@ SOURCES +=  main.cpp \
             gamehistory.cpp \
             pathprovider.cpp \
             logmanager.cpp \
-            blitz.cpp
+            blitz.cpp \
+    network/networkcenter.cpp \
+    brain/test_call_cuda.cpp
 
 HEADERS +=  gui/mainwindow.h \
             gui/gobanview.h \
@@ -69,7 +71,9 @@ HEADERS +=  gui/mainwindow.h \
             gamehistory.h \
             pathprovider.h \
             logmanager.h \
-            blitz.h
+            blitz.h \
+    network/networkcenter.h \
+    brain/test_call_cuda.h
 
 FORMS   +=  gui/mainwindow.ui \
             gui/optionsdialog.ui \

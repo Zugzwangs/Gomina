@@ -19,11 +19,16 @@ graphicsHitboxItem::graphicsHitboxItem(qreal x, qreal y, qreal width, qreal heig
     initialisation();
 }
 
+graphicsHitboxItem::graphicsHitboxItem(const QRectF &rect, QGraphicsItem* parent) : QGraphicsRectItem(rect, parent)
+{
+    initialisation();
+}
+
 void graphicsHitboxItem::initialisation()
 {
     // hitbox => keep item invisible
     setPen( Qt::NoPen );
-    setBrush( QBrush(Qt::yellow /*transparent*/) );
+    setBrush( QBrush(Qt::transparent /*yellow*/) );
     // set behavior
     setAcceptHoverEvents(true);
     setFlag( QGraphicsItem::ItemIsMovable, false);

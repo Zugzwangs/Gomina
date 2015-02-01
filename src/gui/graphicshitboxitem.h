@@ -14,6 +14,7 @@ class graphicsHitboxItem : public QGraphicsRectItem
 public:
     graphicsHitboxItem(QGraphicsItem * parent = 0);
     graphicsHitboxItem(qreal x, qreal y, qreal width, qreal height, QGraphicsItem * parent = 0);
+    graphicsHitboxItem(const QRectF &rect, QGraphicsItem* parent = 0);
     ~graphicsHitboxItem();
 
 protected:

@@ -26,14 +26,21 @@ public:
 
 protected:
     virtual void ​hoverEnterEvent(QGraphicsSceneHoverEvent* event);
+    virtual void hoverMoveEvent(QGraphicsSceneHoverEvent* event);
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent* event);
 
 private:
     uint GobanWidth;
     uint GobanHeight;
+    int goBanSize;
+
     QPointF coord2Pos(QPoint p);
     static QStringList LetterList;
     static QStringList NumberList;
+    void buildHoshi(QPoint p);
+    void buildHitbox(QPoint p);
+    void buildLine(int n, Qt::Orientation orientation);
+    void buildLetters(int n, Qt::Edge edge);
 };
 
 #endif // GRAPHICSGOBANITEM_H
