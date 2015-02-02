@@ -18,6 +18,21 @@ QStringList GraphicsGobanItem::NumberList = QStringList() << "1" << "2" << "3" <
 
 GraphicsGobanItem::GraphicsGobanItem(int _gobanSize, QGraphicsItem* parent) : QGraphicsRectItem(parent)
 {
+    // launch the build
+    buildGoban(_gobanSize);
+
+    // set behavior
+    setAcceptHoverEvents(true);
+    setFlag( QGraphicsItem::ItemIsMovable, false);
+    setFlag( QGraphicsItem::ItemIsSelectable, false);
+
+    // connections
+
+}
+
+// build all items composing the board
+void GraphicsGobanItem::buildGoban(int _gobanSize)
+{
     // if goban size is incorrect set it to the default value
     if ( _gobanSize < 1 || _gobanSize > 19)
         goBanSize = 19;
@@ -30,7 +45,7 @@ GraphicsGobanItem::GraphicsGobanItem(int _gobanSize, QGraphicsItem* parent) : QG
     this->setRect(0, 0, GobanWidth, GobanHeight);
 
     // set pen and brush
-    setPen( QPen(Qt::white) );
+    setPen( QPen(Qt::NoPen) );
     setBrush( QBrush(QPixmap(":res/Goban_texture_01.jpg")) );
 
     // build the lines
@@ -71,14 +86,6 @@ GraphicsGobanItem::GraphicsGobanItem(int _gobanSize, QGraphicsItem* parent) : QG
         buildLetters(i, Qt::LeftEdge);
         buildLetters(i, Qt::RightEdge);
         }
-
-    // set behavior
-    setAcceptHoverEvents(true);
-    setFlag( QGraphicsItem::ItemIsMovable, false);
-    setFlag( QGraphicsItem::ItemIsSelectable, false);
-
-    // connections
-
 }
 
 // convert a game position to coord in Goban coord
@@ -156,7 +163,7 @@ QPointF curPos = coord2Pos( QPoint(n, n) );
             {
             QGraphicsTextItem* crtLetterDown = new QGraphicsTextItem(LetterList.at(n-1), this);
             crtLetterDown->setFont(QFont("Arial", 6));
-            crtLetterDown->setPos(curPos.x() - crtLetterDown->boundingRect().width()/2, GobanHeight-crtLetterDown->boundingRect().width());
+            crtLetterDown->setPos(curPos.x() - crtLetterDown->boundingRect().width()/2, GobanHeight-crtLetterDown->boundingRect().height());
             break;
             }
 

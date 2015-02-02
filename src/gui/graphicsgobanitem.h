@@ -21,6 +21,7 @@ public:
     static const uint GOBAN_LEGEND_BOX = 20;
     static const uint GOBAN_HOSHI_RADIUS = 6;
 
+    QPointF coord2Pos(QPoint p);
     GraphicsGobanItem(int gobanSize, QGraphicsItem *parent=0);
     ~GraphicsGobanItem();
 
@@ -34,9 +35,9 @@ private:
     uint GobanHeight;
     int goBanSize;
 
-    QPointF coord2Pos(QPoint p);
     static QStringList LetterList;
     static QStringList NumberList;
+    void buildGoban(int _gobanSize);
     void buildHoshi(QPoint p);
     void buildHitbox(QPoint p);
     void buildLine(int n, Qt::Orientation orientation);
