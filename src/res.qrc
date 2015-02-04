@@ -7,5 +7,6 @@
         <file>res/goban_background.jpg</file>
         <file>res/default_avatar.png</file>
         <file>res/Goban_texture_01.jpg</file>
+        <file>res/Goban_texture_default.jpg</file>
     </qresource>
 </RCC>

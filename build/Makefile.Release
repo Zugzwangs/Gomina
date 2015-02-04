@@ -64,7 +64,9 @@ SOURCES       = ..\src\main.cpp \
 		..\src\gamehistory.cpp \
 		..\src\pathprovider.cpp \
 		..\src\logmanager.cpp \
-		..\src\blitz.cpp release\rcc\qrc_res.cpp \
+		..\src\blitz.cpp \
+		..\src\network\networkcenter.cpp \
+		..\src\brain\test_call_cuda.cpp release\rcc\qrc_res.cpp \
 		release\moc\moc_mainwindow.cpp \
 		release\moc\moc_gobanview.cpp \
 		release\moc\moc_gobanscene.cpp \
@@ -80,7 +82,8 @@ SOURCES       = ..\src\main.cpp \
 		release\moc\moc_humanplayer.cpp \
 		release\moc\moc_gamearbiter.cpp \
 		release\moc\moc_gamehistory.cpp \
-		release\moc\moc_blitz.cpp
+		release\moc\moc_blitz.cpp \
+		release\moc\moc_networkcenter.cpp
 OBJECTS       = release\obj\main.obj \
 		release\obj\mainwindow.obj \
 		release\obj\gobanview.obj \
@@ -103,6 +106,8 @@ OBJECTS       = release\obj\main.obj \
 		release\obj\pathprovider.obj \
 		release\obj\logmanager.obj \
 		release\obj\blitz.obj \
+		release\obj\networkcenter.obj \
+		release\obj\test_call_cuda.obj \
 		release\obj\qrc_res.obj \
 		release\obj\moc_mainwindow.obj \
 		release\obj\moc_gobanview.obj \
@@ -119,7 +124,8 @@ OBJECTS       = release\obj\main.obj \
 		release\obj\moc_humanplayer.obj \
 		release\obj\moc_gamearbiter.obj \
 		release\obj\moc_gamehistory.obj \
-		release\obj\moc_blitz.obj
+		release\obj\moc_blitz.obj \
+		release\obj\moc_networkcenter.obj
 
 DIST          =  ..\src\gui\mainwindow.h \
 		..\src\gui\gobanview.h \
@@ -141,7 +147,9 @@ DIST          =  ..\src\gui\mainwindow.h \
 		..\src\gamehistory.h \
 		..\src\pathprovider.h \
 		..\src\logmanager.h \
-		..\src\blitz.h ..\src\main.cpp \
+		..\src\blitz.h \
+		..\src\network\networkcenter.h \
+		..\src\brain\test_call_cuda.h ..\src\main.cpp \
 		..\src\gui\mainwindow.cpp \
 		..\src\gui\gobanview.cpp \
 		..\src\gui\gobanscene.cpp \
@@ -162,7 +170,9 @@ DIST          =  ..\src\gui\mainwindow.h \
 		..\src\gamehistory.cpp \
 		..\src\pathprovider.cpp \
 		..\src\logmanager.cpp \
-		..\src\blitz.cpp
+		..\src\blitz.cpp \
+		..\src\network\networkcenter.cpp \
+		..\src\brain\test_call_cuda.cpp
 QMAKE_TARGET  = Gomina
 DESTDIR        = ..\bin\ #avoid trailing-slash linebreak
 TARGET         = Gomina.exe
@@ -171,6 +181,26 @@ DESTDIR_TARGET = ..\bin\Gomina.exe
 ####### Implicit rules
 
 .SUFFIXES: .c .cpp .cc .cxx
+
+{..\src\network}.cpp{release\obj\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\obj\ @<<
+	$<
+<<
+
+{..\src\network}.cc{release\obj\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\obj\ @<<
+	$<
+<<
+
+{..\src\network}.cxx{release\obj\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\obj\ @<<
+	$<
+<<
+
+{..\src\network}.c{release\obj\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\obj\ @<<
+	$<
+<<
 
 {..\src}.cpp{release\obj\}.obj::
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\obj\ @<<
@@ -188,6 +218,26 @@ DESTDIR_TARGET = ..\bin\Gomina.exe
 <<
 
 {..\src}.c{release\obj\}.obj::
+	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\obj\ @<<
+	$<
+<<
+
+{..\src\brain}.cpp{release\obj\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\obj\ @<<
+	$<
+<<
+
+{..\src\brain}.cc{release\obj\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\obj\ @<<
+	$<
+<<
+
+{..\src\brain}.cxx{release\obj\}.obj::
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Forelease\obj\ @<<
+	$<
+<<
+
+{..\src\brain}.c{release\obj\}.obj::
 	$(CC) -c $(CFLAGS) $(INCPATH) -Forelease\obj\ @<<
 	$<
 <<
@@ -315,7 +365,7 @@ dist:
 	$(ZIP) Gomina.zip $(SOURCES) $(DIST) ..\src\Gomina.pro C:\Qt\5.4\msvc2010_opengl\mkspecs\features\spec_pre.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\common\shell-win32.conf C:\Qt\5.4\msvc2010_opengl\mkspecs\qconfig.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_clucene_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_core.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_declarative.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_declarative_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_enginio.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_enginio_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_help.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_location.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_network.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_platformsupport_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_script.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_script_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_webkit.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_webkit_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_webkitwidgets.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_webkitwidgets_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\features\qt_functions.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\qt_config.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\win32\qt_config.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\win32-msvc2010\qmake.conf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\spec_post.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\exclusive_builds.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\default_pre.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\win32\default_pre.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\resolve_config.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\default_post.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\build_pass.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\win32\rtti.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\precompile_header.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\warn_on.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\qt.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\resources.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\moc.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\win32\opengl.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\uic.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\win32\windows.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\testcase_targets.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\exceptions.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\yacc.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\lex.prf ..\src\Gomina.pro ..\src\res.qrc C:/Qt/5.4/msvc2010_opengl/lib/qtmain.prl C:/Qt/5.4/msvc2010_opengl/lib/Qt5Core.prl C:/Qt/5.4/msvc2010_opengl/lib/Qt5Widgets.prl C:/Qt/5.4/msvc2010_opengl/lib/Qt5Gui.prl C:/Qt/5.4/msvc2010_opengl/lib/Qt5Network.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\obj\main.obj release\obj\mainwindow.obj release\obj\gobanview.obj release\obj\gobanscene.obj release\obj\optionsdialog.obj release\obj\gamehud.obj release\obj\graphicstoneitem.obj release\obj\graphicsgobanitem.obj release\obj\graphicshitboxitem.obj release\obj\playerhud.obj release\obj\historicalhud.obj release\obj\gameengine.obj release\obj\goban.obj release\obj\cpuplayer.obj release\obj\chatwindow.obj release\obj\player.obj release\obj\humanplayer.obj release\obj\gamearbiter.obj release\obj\gamehistory.obj release\obj\pathprovider.obj release\obj\logmanager.obj release\obj\blitz.obj release\obj\qrc_res.obj release\obj\moc_mainwindow.obj release\obj\moc_gobanview.obj release\obj\moc_gobanscene.obj release\obj\moc_optionsdialog.obj release\obj\moc_gamehud.obj release\obj\moc_playerhud.obj release\obj\moc_historicalhud.obj release\obj\moc_gameengine.obj release\obj\moc_goban.obj release\obj\moc_cpuplayer.obj release\obj\moc_chatwindow.obj release\obj\moc_player.obj release\obj\moc_humanplayer.obj release\obj\moc_gamearbiter.obj release\obj\moc_gamehistory.obj release\obj\moc_blitz.obj
+	-$(DEL_FILE) release\obj\main.obj release\obj\mainwindow.obj release\obj\gobanview.obj release\obj\gobanscene.obj release\obj\optionsdialog.obj release\obj\gamehud.obj release\obj\graphicstoneitem.obj release\obj\graphicsgobanitem.obj release\obj\graphicshitboxitem.obj release\obj\playerhud.obj release\obj\historicalhud.obj release\obj\gameengine.obj release\obj\goban.obj release\obj\cpuplayer.obj release\obj\chatwindow.obj release\obj\player.obj release\obj\humanplayer.obj release\obj\gamearbiter.obj release\obj\gamehistory.obj release\obj\pathprovider.obj release\obj\logmanager.obj release\obj\blitz.obj release\obj\networkcenter.obj release\obj\test_call_cuda.obj release\obj\qrc_res.obj release\obj\moc_mainwindow.obj release\obj\moc_gobanview.obj release\obj\moc_gobanscene.obj release\obj\moc_optionsdialog.obj release\obj\moc_gamehud.obj release\obj\moc_playerhud.obj release\obj\moc_historicalhud.obj release\obj\moc_gameengine.obj release\obj\moc_goban.obj release\obj\moc_cpuplayer.obj release\obj\moc_chatwindow.obj release\obj\moc_player.obj release\obj\moc_humanplayer.obj release\obj\moc_gamearbiter.obj release\obj\moc_gamehistory.obj release\obj\moc_blitz.obj release\obj\moc_networkcenter.obj
 	-$(DEL_FILE) ..\bin\Gomina.exp ..\bin\Gomina.exe.embed.manifest
 	-$(DEL_FILE) D:\Dev\Qt\Gomina\build\release\obj\logo_link.res
 
@@ -336,6 +386,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\rcc\qrc_res.cpp
 release\rcc\qrc_res.cpp: ..\src\res.qrc \
 		..\src\logo.ico \
+		..\src\res\Goban_texture_default.jpg \
 		..\src\res\black_stone.png \
 		..\src\res\white_stone.png \
 		..\src\res\Goban_texture_01.jpg \
@@ -343,9 +394,9 @@ release\rcc\qrc_res.cpp: ..\src\res.qrc \
 		..\src\res\goban_background.jpg
 	C:\Qt\5.4\msvc2010_opengl\bin\rcc.exe -name res ..\src\res.qrc -o release\rcc\qrc_res.cpp
 
-compiler_moc_header_make_all: release\moc\moc_mainwindow.cpp release\moc\moc_gobanview.cpp release\moc\moc_gobanscene.cpp release\moc\moc_optionsdialog.cpp release\moc\moc_gamehud.cpp release\moc\moc_playerhud.cpp release\moc\moc_historicalhud.cpp release\moc\moc_gameengine.cpp release\moc\moc_goban.cpp release\moc\moc_cpuplayer.cpp release\moc\moc_chatwindow.cpp release\moc\moc_player.cpp release\moc\moc_humanplayer.cpp release\moc\moc_gamearbiter.cpp release\moc\moc_gamehistory.cpp release\moc\moc_blitz.cpp
+compiler_moc_header_make_all: release\moc\moc_mainwindow.cpp release\moc\moc_gobanview.cpp release\moc\moc_gobanscene.cpp release\moc\moc_optionsdialog.cpp release\moc\moc_gamehud.cpp release\moc\moc_playerhud.cpp release\moc\moc_historicalhud.cpp release\moc\moc_gameengine.cpp release\moc\moc_goban.cpp release\moc\moc_cpuplayer.cpp release\moc\moc_chatwindow.cpp release\moc\moc_player.cpp release\moc\moc_humanplayer.cpp release\moc\moc_gamearbiter.cpp release\moc\moc_gamehistory.cpp release\moc\moc_blitz.cpp release\moc\moc_networkcenter.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc\moc_mainwindow.cpp release\moc\moc_gobanview.cpp release\moc\moc_gobanscene.cpp release\moc\moc_optionsdialog.cpp release\moc\moc_gamehud.cpp release\moc\moc_playerhud.cpp release\moc\moc_historicalhud.cpp release\moc\moc_gameengine.cpp release\moc\moc_goban.cpp release\moc\moc_cpuplayer.cpp release\moc\moc_chatwindow.cpp release\moc\moc_player.cpp release\moc\moc_humanplayer.cpp release\moc\moc_gamearbiter.cpp release\moc\moc_gamehistory.cpp release\moc\moc_blitz.cpp
+	-$(DEL_FILE) release\moc\moc_mainwindow.cpp release\moc\moc_gobanview.cpp release\moc\moc_gobanscene.cpp release\moc\moc_optionsdialog.cpp release\moc\moc_gamehud.cpp release\moc\moc_playerhud.cpp release\moc\moc_historicalhud.cpp release\moc\moc_gameengine.cpp release\moc\moc_goban.cpp release\moc\moc_cpuplayer.cpp release\moc\moc_chatwindow.cpp release\moc\moc_player.cpp release\moc\moc_humanplayer.cpp release\moc\moc_gamearbiter.cpp release\moc\moc_gamehistory.cpp release\moc\moc_blitz.cpp release\moc\moc_networkcenter.cpp
 release\moc\moc_mainwindow.cpp: C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QMainWindow \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qmainwindow.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qwidget.h \
@@ -1658,6 +1709,59 @@ release\moc\moc_blitz.cpp: C:\Qt\5.4\msvc2010_opengl\include\QtCore\QObject \
 		..\src\blitz.h
 	C:\Qt\5.4\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.4/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/Dev/Qt/Gomina/src -IC:/Qt/5.4/msvc2010_opengl/include -IC:/Qt/5.4/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.4/msvc2010_opengl/include/QtGui -IC:/Qt/5.4/msvc2010_opengl/include/QtNetwork -IC:/Qt/5.4/msvc2010_opengl/include/QtCore -I. ..\src\blitz.h -o release\moc\moc_blitz.cpp
 
+release\moc\moc_networkcenter.cpp: C:\Qt\5.4\msvc2010_opengl\include\QtCore\QObject \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobject.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qnamespace.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qglobal.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qconfig.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qfeatures.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qtypetraits.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qsysinfo.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qlogging.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qflags.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qmutex.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qnumeric.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qstring.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qchar.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qbytearray.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qrefcount.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qarraydata.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qlist.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qalgorithms.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qiterator.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcoreevent.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qmetatype.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qisenum.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobject_impl.h \
+		..\src\network\networkcenter.h
+	C:\Qt\5.4\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.4/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/Dev/Qt/Gomina/src -IC:/Qt/5.4/msvc2010_opengl/include -IC:/Qt/5.4/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.4/msvc2010_opengl/include/QtGui -IC:/Qt/5.4/msvc2010_opengl/include/QtNetwork -IC:/Qt/5.4/msvc2010_opengl/include/QtCore -I. ..\src\network\networkcenter.h -o release\moc\moc_networkcenter.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
 compiler_uic_make_all: release\ui\ui_mainwindow.h release\ui\ui_optionsdialog.h release\ui\ui_gamehud.h release\ui\ui_playerhud.h release\ui\ui_historicalhud.h release\ui\ui_chatwindow.h
@@ -2558,8 +2662,11 @@ release\obj\graphicsgobanitem.obj: ..\src\gui\graphicsgobanitem.cpp ..\src\gui\g
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\QPen \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qpen.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qbrush.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\QFont \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qfont.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QDebug \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QGraphicsLineItem \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QGraphicsTextItem \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QGraphicsEllipseItem
 
 release\obj\graphicshitboxitem.obj: ..\src\gui\graphicshitboxitem.cpp ..\src\gui\graphicshitboxitem.h \
@@ -3418,6 +3525,60 @@ release\obj\blitz.obj: ..\src\blitz.cpp ..\src\blitz.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qisenum.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobject_impl.h
 
+release\obj\networkcenter.obj: ..\src\network\networkcenter.cpp ..\src\network\networkcenter.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QObject \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobject.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qnamespace.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qglobal.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qconfig.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qfeatures.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qsystemdetection.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qprocessordetection.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcompilerdetection.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qtypeinfo.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qtypetraits.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qsysinfo.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qlogging.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qflags.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qbasicatomic.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qgenericatomic.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_msvc.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_armv7.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_armv6.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_armv5.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_ia64.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_mips.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_x86.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_gcc.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qatomic_unix.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qglobalstatic.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qmutex.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qnumeric.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qstring.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qchar.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qbytearray.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qrefcount.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qarraydata.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qlist.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qalgorithms.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qiterator.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcoreevent.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qscopedpointer.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qmetatype.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qvarlengtharray.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcontainerfwd.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qisenum.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobject_impl.h
+
+release\obj\test_call_cuda.obj: ..\src\brain\test_call_cuda.cpp ..\src\brain\test_call_cuda.h
+
 release\obj\qrc_res.obj: release\rcc\qrc_res.cpp 
 
 release\obj\moc_mainwindow.obj: release\moc\moc_mainwindow.cpp 
@@ -3451,6 +3612,8 @@ release\obj\moc_gamearbiter.obj: release\moc\moc_gamearbiter.cpp
 release\obj\moc_gamehistory.obj: release\moc\moc_gamehistory.cpp 
 
 release\obj\moc_blitz.obj: release\moc\moc_blitz.cpp 
+
+release\obj\moc_networkcenter.obj: release\moc\moc_networkcenter.cpp 
 
 ####### Install
 

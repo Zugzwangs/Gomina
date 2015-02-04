@@ -21,9 +21,10 @@ public:
     static const uint GOBAN_LEGEND_BOX = 20;
     static const uint GOBAN_HOSHI_RADIUS = 6;
 
-    QPointF coord2Pos(QPoint p);
     GraphicsGobanItem(int gobanSize, QGraphicsItem *parent=0);
     ~GraphicsGobanItem();
+    QPointF coord2Pos(QPoint p);
+    //setGobanTexture(QString s);
 
 protected:
     virtual void ​hoverEnterEvent(QGraphicsSceneHoverEvent* event);

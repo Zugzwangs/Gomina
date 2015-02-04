@@ -30,9 +30,22 @@ GraphicsGobanItem::GraphicsGobanItem(int _gobanSize, QGraphicsItem* parent) : QG
 
 }
 
+GraphicsGobanItem::~GraphicsGobanItem() {}
+
+// convert a game position to coord in Goban coord
+QPointF GraphicsGobanItem::coord2Pos(QPoint p)
+{
+    float _x_pos = GOBAN_BORDER_THICKNESS + (p.x()-1)*(GOBAN_STEP_SIZE_WIDTH+GOBAN_LINE_THICKNESS) + GOBAN_LINE_THICKNESS/2;
+    float _y_pos = GOBAN_BORDER_THICKNESS + (p.y()-1)*(GOBAN_STEP_SIZE_HEIGHT+GOBAN_LINE_THICKNESS)+ GOBAN_LINE_THICKNESS/2;;
+    return QPointF(_x_pos, _y_pos);
+}
+
 // build all items composing the board
 void GraphicsGobanItem::buildGoban(int _gobanSize)
 {
+    // flush all existing child
+    this->childItems().clear();
+
     // if goban size is incorrect set it to the default value
     if ( _gobanSize < 1 || _gobanSize > 19)
         goBanSize = 19;
@@ -44,9 +57,13 @@ void GraphicsGobanItem::buildGoban(int _gobanSize)
     GobanHeight = (goBanSize-1)*GOBAN_STEP_SIZE_HEIGHT + goBanSize*GOBAN_LINE_THICKNESS + 2*GOBAN_BORDER_THICKNESS;
     this->setRect(0, 0, GobanWidth, GobanHeight);
 
-    // set pen and brush
+    // set pen and brush according to the layout.cfg
     setPen( QPen(Qt::NoPen) );
-    setBrush( QBrush(QPixmap(":res/Goban_texture_01.jpg")) );
+
+    if ( false )
+        setBrush( QBrush(QPixmap(":res/Goban_texture_01.jpg")) );
+    else
+        setBrush( QBrush(QPixmap(":res/Goban_texture_default.jpg")) );
 
     // build the lines
     for (int i=1; i<=goBanSize; i++)
@@ -86,14 +103,6 @@ void GraphicsGobanItem::buildGoban(int _gobanSize)
         buildLetters(i, Qt::LeftEdge);
         buildLetters(i, Qt::RightEdge);
         }
-}
-
-// convert a game position to coord in Goban coord
-QPointF GraphicsGobanItem::coord2Pos(QPoint p)
-{
-    float _x_pos = GOBAN_BORDER_THICKNESS + (p.x()-1)*(GOBAN_STEP_SIZE_WIDTH+GOBAN_LINE_THICKNESS) + GOBAN_LINE_THICKNESS/2;
-    float _y_pos = GOBAN_BORDER_THICKNESS + (p.y()-1)*(GOBAN_STEP_SIZE_HEIGHT+GOBAN_LINE_THICKNESS)+ GOBAN_LINE_THICKNESS/2;;
-    return QPointF(_x_pos, _y_pos);
 }
 
 // build the n'th horizontal or vertical line
@@ -188,6 +197,7 @@ QPointF curPos = coord2Pos( QPoint(n, n) );
     }
 }
 
+// Event Handlers
 void GraphicsGobanItem::​hoverEnterEvent(QGraphicsSceneHoverEvent* event)
 {
     qDebug() << "GraphicsGobanItem::​hoverEnterEvent()";
@@ -203,10 +213,5 @@ void GraphicsGobanItem::hoverMoveEvent(QGraphicsSceneHoverEvent* event)
 void GraphicsGobanItem::hoverLeaveEvent(QGraphicsSceneHoverEvent* event)
 {
     qDebug() << "GraphicsGobanItem::hoverLeaveEvent()";
-}
-
-GraphicsGobanItem::~GraphicsGobanItem()
-{
-
 }
 
