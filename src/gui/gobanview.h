@@ -14,6 +14,7 @@ class GobanView : public QGraphicsView
 
 public:
     GobanView(QWidget *parent = 0);
+    void scaleView(qreal scaleFactor);
     ~GobanView();
 };
 

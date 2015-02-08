@@ -18,6 +18,8 @@ public:
     GraphicsGobanItem *createGoban(int gobanSize = 19);
     ~GobanScene();
 
+    GraphicsGobanItem *gobanItem;
+
 private:
 
 };

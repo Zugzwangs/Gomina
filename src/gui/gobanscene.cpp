@@ -13,6 +13,7 @@ GobanScene::GobanScene(QObject* parent) : QGraphicsScene(parent)
 
 }
 
+// create the Goban Item and return a pointer to it
 GraphicsGobanItem* GobanScene::createGoban(int gobanSize)
 {
     qDebug() << "createGoban() : build new goban with size of " << gobanSize;
@@ -25,12 +26,12 @@ GraphicsGobanItem* GobanScene::createGoban(int gobanSize)
     this->clear();
 
     // create the board
-    GraphicsGobanItem *gobanItem = new GraphicsGobanItem(gobanSize);
-    this->addItem(gobanItem);
+    gobanItem = new GraphicsGobanItem(gobanSize);
+    addItem(gobanItem);
     return gobanItem;
 }
 
-
+//
 GobanScene::~GobanScene()
 {
 
