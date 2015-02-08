@@ -2,7 +2,7 @@
 //
 //
 /*******************************************************/
-
+#include <QDebug>
 #include "goban.h"
 
 Goban::Goban(QObject *parent) : QObject(parent)
@@ -30,22 +30,26 @@ void Goban::setSize(QSize s)
     grid.resize(s.width()*s.height());
     size.setWidth( s.width() );
     size.setHeight( s.height() );
-    grid.fill(0);
+    grid.fill(-1);
 }
 
 int Goban::getValue(int x, int y)
 {
-    return grid.at( x+y*size.width() );
+    return grid.at( (x-1)+(y-1)*size.width() );
 }
 
 int Goban::getValue(QPoint p)
 {
-    return grid.at( p.x()+p.y()*size.width() );
+    qDebug() << "###############################";
+    qDebug() << "getValue ON (" << p.x() << ";" << p.y() << ")";
+    qDebug() << "computed case is " << p.x()+p.y()*size.width();
+    qDebug() << "###############################";
+    return grid.at( (p.x()-1)+(p.y()-1)*size.width() );
 }
 
 void Goban::setValue(QPoint p, int v)
 {
-    grid[ p.x()+p.y()*size.height() ] = v;
+    grid[ (p.x()-1)+(p.y()-1)*size.height() ] = v;
 }
 
 Goban::~Goban()

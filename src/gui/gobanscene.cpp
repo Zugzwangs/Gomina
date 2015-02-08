@@ -7,22 +7,18 @@
 #include <QDebug>
 
 #include "gobanscene.h"
-#include "QGraphicsRectItem"
 
 GobanScene::GobanScene(QObject* parent) : QGraphicsScene(parent)
 {
-    // by default build a 19*19 Goban
-    createGoban(19);
-    // behavior
+
 }
 
-void GobanScene::createGoban(int gobanSize)
+GraphicsGobanItem* GobanScene::createGoban(int gobanSize)
 {
     qDebug() << "createGoban() : build new goban with size of " << gobanSize;
     if ( gobanSize<2 || gobanSize>19)
-        {
-        qDebug("error: the size requested for the Goban is incorrect.");
-        return;
+        {// if size is incorrect force a default size
+        gobanSize = 19;
         }
 
     // clean up previous scene
@@ -31,6 +27,7 @@ void GobanScene::createGoban(int gobanSize)
     // create the board
     GraphicsGobanItem *gobanItem = new GraphicsGobanItem(gobanSize);
     this->addItem(gobanItem);
+    return gobanItem;
 }
 
 

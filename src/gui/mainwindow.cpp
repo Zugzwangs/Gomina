@@ -16,6 +16,7 @@ MainWindow::MainWindow(GameEngine *GE, QWidget *parent) :  QMainWindow(parent), 
 
     // setup the playground part
     goban_scene = new GobanScene(this);
+    goban_item = goban_scene->createGoban(19);
     ui->goban_view->setScene(goban_scene);
 
     // setup the HUD part
@@ -23,6 +24,10 @@ MainWindow::MainWindow(GameEngine *GE, QWidget *parent) :  QMainWindow(parent), 
 
     // keep the pointer to the game's engine
     Gomenige = GE;
+
+    // connections
+    connect( goban_item, SIGNAL(clickOnCase(QPoint)), Gomenige, SLOT(playedOn(QPoint)) );
+    connect( Gomenige, SIGNAL(gobanChanged(QPoint,int)), goban_item, SLOT(playOnCase(QPoint,int)) );
 }
 
 MainWindow::~MainWindow()

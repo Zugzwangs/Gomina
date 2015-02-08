@@ -6,10 +6,12 @@
 #ifndef GRAPHICSGOBANITEM_H
 #define GRAPHICSGOBANITEM_H
 
+#include <QObject>
 #include <QGraphicsRectItem>
 
-class GraphicsGobanItem : public QGraphicsRectItem
+class GraphicsGobanItem : public QObject, public QGraphicsRectItem
 {
+    Q_OBJECT
 
 public:
     static const uint STONE_SIZE_HEIGHT = 20;
@@ -32,17 +34,26 @@ protected:
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent* event);
 
 private:
+    static QStringList LetterList;
+    static QStringList NumberList;
+    //static QList<QPoint> HoshiPosList;
+
     uint GobanWidth;
     uint GobanHeight;
     int goBanSize;
 
-    static QStringList LetterList;
-    static QStringList NumberList;
     void buildGoban(int _gobanSize);
     void buildHoshi(QPoint p);
     void buildHitbox(QPoint p);
     void buildLine(int n, Qt::Orientation orientation);
     void buildLetters(int n, Qt::Edge edge);
+
+public slots:
+    void playOnCase(QPoint p, int camp);
+
+signals:
+    void clickOnCase(QPoint p);
+
 };
 
 #endif // GRAPHICSGOBANITEM_H

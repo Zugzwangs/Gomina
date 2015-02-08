@@ -4,7 +4,6 @@
 /*******************************************************/
 
 #include "graphicshitboxitem.h"
-#include "graphicstoneitem.h"
 
 #include <QPen>
 #include <QDebug>
@@ -26,6 +25,7 @@ graphicsHitboxItem::graphicsHitboxItem(const QRectF &rect, QGraphicsItem* parent
 
 void graphicsHitboxItem::initialisation()
 {
+    GamePos = QPoint(0, 0);
     // hitbox => keep item invisible
     setPen( Qt::NoPen );
     setBrush( QBrush(Qt::transparent /*yellow*/) );
@@ -33,6 +33,7 @@ void graphicsHitboxItem::initialisation()
     setAcceptHoverEvents(true);
     setFlag( QGraphicsItem::ItemIsMovable, false);
     setFlag( QGraphicsItem::ItemIsSelectable, false);
+
 }
 
 void graphicsHitboxItem::​hoverEnterEvent(QGraphicsSceneHoverEvent* event)
@@ -47,15 +48,26 @@ void graphicsHitboxItem::hoverLeaveEvent(QGraphicsSceneHoverEvent* event)
     qDebug() << "graphicsHitboxItem::hoverLeaveEvent()";
     setBrush( QBrush(Qt::transparent) );
     QGraphicsRectItem::hoverLeaveEvent(event);
-
 }
 
 void graphicsHitboxItem::mousePressEvent(QGraphicsSceneMouseEvent * event)
 {
+    Q_UNUSED(event);
     qDebug() << "MOUSE PRESS EVENT ON HITBOX";
-    GraphicStoneITem* shit = new GraphicStoneITem(0, this);
-    shit->setPos(this->pos());
+    qDebug() << "HitBoxItemPos x=" << this->pos().x() << " y=" << this->pos().y();
+    qDebug() << "HitBoxItemScenePos x=" << this->scenePos().x() << " y=" << this->scenePos().y();
+    qDebug() << "GamePos is x=" << GamePos.x() << " y=" << GamePos.y();
+    emit clicked(GamePos);
+}
 
+void graphicsHitboxItem::setGamePos(QPoint p)
+{
+    GamePos = p;
+}
+
+QPoint graphicsHitboxItem::getGamePos()
+{
+    return GamePos;
 }
 
 graphicsHitboxItem::~graphicsHitboxItem()

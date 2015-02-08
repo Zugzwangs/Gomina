@@ -5,6 +5,7 @@
 
 #include "graphicsgobanitem.h"
 #include "graphicshitboxitem.h"
+#include "graphicstoneitem.h"
 
 #include <QPen>
 #include <QFont>
@@ -15,6 +16,7 @@
 
 QStringList GraphicsGobanItem::LetterList = QStringList() << "A" << "B" << "C" << "D" << "E" << "F" << "G" << "H" << "J" << "K" << "L" << "M" << "N" << "O" << "P" << "Q" << "R" << "S" << "T";
 QStringList GraphicsGobanItem::NumberList = QStringList() << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "10" << "11" << "12" << "13" << "14" << "15" << "16" << "17" << "18" << "19";
+//QList<QPoint> GraphicsGobanItem::HoshiPosList << QPoint(4, 4);
 
 GraphicsGobanItem::GraphicsGobanItem(int _gobanSize, QGraphicsItem* parent) : QGraphicsRectItem(parent)
 {
@@ -27,7 +29,7 @@ GraphicsGobanItem::GraphicsGobanItem(int _gobanSize, QGraphicsItem* parent) : QG
     setFlag( QGraphicsItem::ItemIsSelectable, false);
 
     // connections
-
+    //QObject::connect( this, SIGNAL(clickOnCase(QPoint)), this, SLOT(playOnCase(QPoint)) );
 }
 
 GraphicsGobanItem::~GraphicsGobanItem() {}
@@ -52,7 +54,7 @@ void GraphicsGobanItem::buildGoban(int _gobanSize)
     else
         goBanSize = _gobanSize;
 
-    // compute and set the size of the Goban Item
+    // compute and set the size of the Goban Itself
     GobanWidth  = (goBanSize-1)*GOBAN_STEP_SIZE_WIDTH  + goBanSize*GOBAN_LINE_THICKNESS + 2*GOBAN_BORDER_THICKNESS;
     GobanHeight = (goBanSize-1)*GOBAN_STEP_SIZE_HEIGHT + goBanSize*GOBAN_LINE_THICKNESS + 2*GOBAN_BORDER_THICKNESS;
     this->setRect(0, 0, GobanWidth, GobanHeight);
@@ -151,6 +153,8 @@ void GraphicsGobanItem::buildHitbox(QPoint p)
     QRectF yoMan( QPointF(0, 0), QSizeF(STONE_SIZE_WIDTH, STONE_SIZE_WIDTH) );
     yoMan.moveCenter( coord2Pos(p) );
     graphicsHitboxItem* crtCase = new graphicsHitboxItem(yoMan, this);
+    crtCase->setGamePos(p);
+    connect(crtCase, SIGNAL(clicked(QPoint)), this, SIGNAL(clickOnCase(QPoint)) );
 }
 
 // build Letters and Digits around the board
@@ -213,5 +217,12 @@ void GraphicsGobanItem::hoverMoveEvent(QGraphicsSceneHoverEvent* event)
 void GraphicsGobanItem::hoverLeaveEvent(QGraphicsSceneHoverEvent* event)
 {
     qDebug() << "GraphicsGobanItem::hoverLeaveEvent()";
+}
+
+// Custom Slots
+void GraphicsGobanItem::playOnCase(QPoint p, int camp)
+{
+    GraphicStoneITem* crtStone = new GraphicStoneITem(1, this);
+    crtStone->setPos( coord2Pos(p) - crtStone->boundingRect().center() );
 }
 

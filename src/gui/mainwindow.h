@@ -24,9 +24,13 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    GobanScene* goban_scene;
     GameHud* Hud;
+
+    GobanScene* goban_scene;
+    GraphicsGobanItem* goban_item;
+
     GameEngine* Gomenige;
+
 };
 
 #endif // MAINWINDOW_H

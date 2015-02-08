@@ -1,0 +1,62 @@
+Liste des choses à faire version par version:
+
+ * Version 0.1:
+    - créer une enumération pour le type valeur dans le Goban/GobanItem BLACK, WHITE, EMPTY, FORBINDEN,
+    - conversion des coordonnées tableau vers les coordonnées classiques/ vers chiffres inversés et lettres ?
+    -
+    -
+
+
+ * Version 0.2:
+     -
+     -
+     -
+     -
+
+ * Version 0.3:
+     -
+     -
+     -
+     -
+
+ * Version 0.4:
+     -
+     -
+     -
+     -
+
+ * Version 0.5:
+     -
+     -
+     -
+     -
+
+ * Version 0.6:
+     -
+     -
+     -
+     -
+
+ * Version 0.7:
+     -
+     -
+     -
+     -
+
+ * Version 0.8:
+     -
+     -
+     -
+     -
+
+ * Version 0.9:
+     -
+     -
+     -
+     -
+
+ * Version beta 1.0:
+     -
+     -
+     -
+     -

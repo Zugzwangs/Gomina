@@ -15,7 +15,7 @@ class GobanScene : public QGraphicsScene
 
 public:
     GobanScene(QObject* parent = 0);
-    void createGoban(int gobanSize = 19);
+    GraphicsGobanItem *createGoban(int gobanSize = 19);
     ~GobanScene();
 
 private:

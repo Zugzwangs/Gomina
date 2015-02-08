@@ -18,8 +18,10 @@ public:
     ~GameEngine();
 
 signals:
+    void gobanChanged(QPoint p, int c);
 
 public slots:
+    void playedOn(QPoint p);
 
 private:
     Goban* myGoban;

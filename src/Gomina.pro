@@ -143,3 +143,6 @@ RC_FILE = logo_link.rc
 # custom deployment step
 #--------------------------------------------------
 # ??
+
+DISTFILES += \
+    TODO_LIST.txt

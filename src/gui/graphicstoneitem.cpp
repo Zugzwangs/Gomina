@@ -7,11 +7,6 @@
 #include "graphicsgobanitem.h"
 
 
-GraphicStoneITem::GraphicStoneITem(QGraphicsItem *parent) : QGraphicsPixmapItem(parent)
-{
-
-}
-
 GraphicStoneITem::GraphicStoneITem(int camp, QGraphicsItem * parent) : QGraphicsPixmapItem(parent)
 {
     int _sizeW = GraphicsGobanItem::STONE_SIZE_WIDTH;
@@ -32,6 +27,10 @@ GraphicStoneITem::GraphicStoneITem(int camp, QGraphicsItem * parent) : QGraphics
             }
 
         default:
+            {
+            setPixmap( QPixmap(":res/white_stone.png").scaled(_sizeW, _sizeH, Qt::KeepAspectRatio, Qt::SmoothTransformation) );
+            break;
+            }
         break;
         }
 }
