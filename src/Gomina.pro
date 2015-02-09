@@ -37,19 +37,19 @@ SOURCES +=  main.cpp \
             gui/graphicshitboxitem.cpp \
             gui/playerhud.cpp \
             gui/historicalhud.cpp \
-            gameengine.cpp \
-            goban.cpp \
-            cpuplayer.cpp \
             gui/chatwindow.cpp \
-            player.cpp \
-            humanplayer.cpp \
-            gamearbiter.cpp \
-            gamehistory.cpp \
-            pathprovider.cpp \
-            logmanager.cpp \
-            blitz.cpp \
+            engine/blitz.cpp \
+            engine/cpuplayer.cpp \
+            engine/humanplayer.cpp \
+            engine/player.cpp \
+            engine/gamearbiter.cpp \
+            engine/gameengine.cpp \
+            engine/gamehistory.cpp \
+            engine/goban.cpp \
+            brain/test_call_cuda.cpp \
             network/networkcenter.cpp \
-            brain/test_call_cuda.cpp
+            pathprovider.cpp \
+            logmanager.cpp
 
 HEADERS +=  gui/mainwindow.h \
             gui/gobanview.h \
@@ -61,19 +61,19 @@ HEADERS +=  gui/mainwindow.h \
             gui/graphicshitboxitem.h \
             gui/playerhud.h \
             gui/historicalhud.h \
-            gameengine.h \
-            goban.h \
-            cpuplayer.h \
             gui/chatwindow.h \
-            player.h \
-            humanplayer.h \
-            gamearbiter.h \
-            gamehistory.h \
-            pathprovider.h \
-            logmanager.h \
-            blitz.h \
+            engine/blitz.h \
+            engine/cpuplayer.h \
+            engine/humanplayer.h \
+            engine/player.h \
+            engine/gamearbiter.h \
+            engine/gameengine.h \
+            engine/gamehistory.h \
+            engine/goban.h \
+            brain/test_call_cuda.h \
             network/networkcenter.h \
-            brain/test_call_cuda.h
+            pathprovider.h \
+            logmanager.h
 
 FORMS   +=  gui/mainwindow.ui \
             gui/optionsdialog.ui \
@@ -82,7 +82,9 @@ FORMS   +=  gui/mainwindow.ui \
             gui/historicalhud.ui \
             gui/chatwindow.ui
 
-OTHER_FILES += vectorAddition.cu    # This makes the .cu files appear in your project
+# This makes the .cu files appear in your project
+OTHER_FILES += "Road map.txt" \
+               brain/vectorAddition.cu
 
 RESOURCES += res.qrc
 
@@ -144,5 +146,3 @@ RC_FILE = logo_link.rc
 #--------------------------------------------------
 # ??
 
-DISTFILES += \
-    TODO_LIST.txt

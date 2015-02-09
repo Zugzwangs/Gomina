@@ -1,0 +1,55 @@
+Liste des choses à faire version par version:
+
+ * Version 0.1:
+    - créer une enumération pour le type valeur dans le Goban/GobanItem BLACK, WHITE, EMPTY, FORBINDEN,
+    - conversion des coordonnées tableau vers les coordonnées classiques/ vers chiffres inversés et lettres ?
+    - principaux element IHM en place MainWindow MenuOption Goban. Gros du design en place
+
+ * Version 0.2:
+     - Goban jouable
+     - menu contextuels
+     - HUD en place
+     - Boutons principaux placés et menu complétés
+
+ * Version 0.3:
+     - Jeu à 2 joueurs fonctionnel
+     - Implémentation des règles du jeu (KO, score, fin de game)
+     - actions secondaires : choix taille goban
+
+
+ * Version 0.4:
+     - IHM et Goban customisable
+     - Sauvergarde profils joueurs
+     - Sauvegarde partie / position
+     - Reload partie / position
+
+ * Version 0.5:
+     - multijoueurs reseau
+     - biblio de parties
+     - interopérabilité avec serveur de jeu de go
+     - support du format perso de parties .sgfx
+
+ * Version 0.6:
+     - chaine de compil CUDA opé
+     - IA basique
+     - refactoring & profiling de code
+
+ * Version 0.7:
+     - traduction Anglais/francais
+     - unit test / debugging / fuzzing / beta testing
+     - optimisation de code
+
+ * Version 0.8:
+     - tutoriel
+     - serveur de mise à jour
+     - doc
+
+ * Version 0.9:
+     - IA monté Carlo implémentée
+     - IA paramètrable
+
+ * Version beta 1.0:
+     - Cross compil vers Linux / OS X
+     - Installer
+     - pollish de code
+     - site web distrib

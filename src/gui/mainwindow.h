@@ -10,7 +10,7 @@
 
 #include "gobanscene.h"
 #include "gamehud.h"
-#include "../gameengine.h"
+#include "../engine/gameengine.h"
 
 namespace Ui {  class MainWindow;   }
 
