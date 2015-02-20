@@ -22,6 +22,10 @@ public:
     explicit MainWindow(GameEngine* GE, QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+    void OpenMenuOption();
+    void OpenAbout();
+
 private:
     Ui::MainWindow *ui;
     GameHud* Hud;

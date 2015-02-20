@@ -135,21 +135,38 @@
     <property name="title">
      <string>File</string>
     </property>
+    <addaction name="actionSave_Game"/>
+    <addaction name="actionLoad_Game"/>
+    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menuGame">
     <property name="title">
      <string>Game</string>
     </property>
+    <addaction name="actionSave_position"/>
+    <addaction name="actionLoad_position"/>
+    <addaction name="separator"/>
+    <addaction name="actionRestart"/>
    </widget>
    <widget class="QMenu" name="menuOptions">
+    <property name="tearOffEnabled">
+     <bool>false</bool>
+    </property>
     <property name="title">
      <string>Options</string>
     </property>
+    <addaction name="actionProfile"/>
+    <addaction name="separator"/>
+    <addaction name="actionMenu"/>
    </widget>
    <widget class="QMenu" name="menuA_propos">
     <property name="title">
-     <string>A propos</string>
+     <string>Help</string>
     </property>
+    <addaction name="actionRules"/>
+    <addaction name="separator"/>
+    <addaction name="actionReport_bug"/>
+    <addaction name="actionAbout_Gomina"/>
    </widget>
    <addaction name="menuFIle"/>
    <addaction name="menuGame"/>
@@ -157,6 +174,56 @@
    <addaction name="menuA_propos"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionAbout_Gomina">
+   <property name="text">
+    <string>About Gomina</string>
+   </property>
+  </action>
+  <action name="actionMenu">
+   <property name="text">
+    <string>Menu...</string>
+   </property>
+  </action>
+  <action name="actionSave_position">
+   <property name="text">
+    <string>Quick save</string>
+   </property>
+  </action>
+  <action name="actionLoad_position">
+   <property name="text">
+    <string>Quick load</string>
+   </property>
+  </action>
+  <action name="actionRestart">
+   <property name="text">
+    <string>Restart</string>
+   </property>
+  </action>
+  <action name="actionSave_Game">
+   <property name="text">
+    <string>Save Game</string>
+   </property>
+  </action>
+  <action name="actionLoad_Game">
+   <property name="text">
+    <string>Load Game</string>
+   </property>
+  </action>
+  <action name="actionProfile">
+   <property name="text">
+    <string>Profile...</string>
+   </property>
+  </action>
+  <action name="actionRules">
+   <property name="text">
+    <string>Rules</string>
+   </property>
+  </action>
+  <action name="actionReport_bug">
+   <property name="text">
+    <string>Report bug</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>

@@ -5,6 +5,7 @@
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "optionsdialog.h"
 
 MainWindow::MainWindow(GameEngine *GE, QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -25,9 +26,25 @@ MainWindow::MainWindow(GameEngine *GE, QWidget *parent) :  QMainWindow(parent), 
     // keep the pointer to the game's engine
     Gomenige = GE;
 
-    // connections
+    // connect modules together
     connect( goban_item, SIGNAL(clickOnCase(QPoint)), Gomenige, SLOT(playedOn(QPoint)) );
     connect( Gomenige, SIGNAL(gobanChanged(QPoint,int)), goban_item, SLOT(playOnCase(QPoint,int)) );
+    // connect actions from menu
+    connect( ui->actionMenu, SIGNAL(triggered()), this, SLOT(OpenMenuOption()) );
+    connect(ui->actionAbout_Gomina, SIGNAL(triggered()), this, SLOT(OpenAbout()) );
+
+}
+
+void MainWindow::OpenMenuOption()
+{
+    OptionsDialog Options(this);
+    Options.exec();
+}
+
+
+void MainWindow::OpenAbout()
+{
+
 }
 
 MainWindow::~MainWindow()
