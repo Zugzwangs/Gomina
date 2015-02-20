@@ -16,18 +16,16 @@ GobanScene::GobanScene(QObject* parent) : QGraphicsScene(parent)
 // create the Goban Item and return a pointer to it
 GraphicsGobanItem* GobanScene::createGoban(int gobanSize)
 {
-    qDebug() << "createGoban() : build new goban with size of " << gobanSize;
-    if ( gobanSize<2 || gobanSize>19)
-        {// if size is incorrect force a default size
-        gobanSize = 19;
-        }
-
     // clean up previous scene
     this->clear();
 
     // create the board
     gobanItem = new GraphicsGobanItem(gobanSize);
     addItem(gobanItem);
+
+    // gives space around goban
+    QRectF totalSceneRect = sceneRect() + QMarginsF(40, 40, 40, 40);
+    addRect(totalSceneRect, QPen(Qt::NoPen), QBrush(Qt::NoBrush));
     return gobanItem;
 }
 

@@ -5,19 +5,29 @@
 /*******************************************************/
 
 #include "gobanview.h"
+#include <QDebug>
 
 GobanView::GobanView(QWidget *parent) : QGraphicsView(parent)
 {
-    this->setBackgroundBrush( QBrush(QPixmap(":res/goban_background.jpg")) );
+    // rendering options
+    setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
+
+    //
+
+    // setting background picture
+    setBackgroundBrush( QBrush(QPixmap(":res/goban_background.jpg")) );
 }
 
 // adjust the zoom factor to make Goban item take 80% of the View's width
-void GobanView::scaleView(qreal scaleFactor)
+void GobanView::adjustZoom()
 {
-    qreal factor = matrix().scale(scaleFactor, scaleFactor).mapRect(QRectF(0, 0, 1, 1)).width();
-    if (factor<0.1 || factor>1.1)
-        return;
-    scale(scaleFactor, scaleFactor);
+    this->fitInView( scene()->sceneRect(), Qt::KeepAspectRatio );
+}
+
+void GobanView::resizeEvent(QResizeEvent * event)
+{
+    QGraphicsView::resizeEvent(event);
+    adjustZoom();
 }
 
 GobanView::~GobanView()

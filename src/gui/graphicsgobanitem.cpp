@@ -20,6 +20,12 @@ QStringList GraphicsGobanItem::NumberList = QStringList() << "1" << "2" << "3" <
 
 GraphicsGobanItem::GraphicsGobanItem(int _gobanSize, QGraphicsItem* parent) : QGraphicsRectItem(parent)
 {
+    qDebug() << "createGoban() : build new goban with size of " << _gobanSize;
+    if ( _gobanSize<2 || _gobanSize>19)
+        {// if size is incorrect force a default size
+        _gobanSize = 19;
+        }
+
     // launch the build
     buildGoban(_gobanSize);
 

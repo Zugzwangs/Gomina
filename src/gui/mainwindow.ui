@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1080</width>
-    <height>801</height>
+    <width>1079</width>
+    <height>794</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,6 +21,21 @@
     </size>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,1">
+    <property name="spacing">
+     <number>5</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QFrame" name="PlaygroundFrame">
       <property name="frameShape">
@@ -30,6 +45,21 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="GobanView" name="goban_view">
          <property name="minimumSize">
@@ -61,11 +91,17 @@
        <property name="topMargin">
         <number>0</number>
        </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
        <property name="bottomMargin">
         <number>0</number>
        </property>
        <item>
         <widget class="GameHud" name="scrollArea">
+         <property name="sizeAdjustPolicy">
+          <enum>QAbstractScrollArea::AdjustToContents</enum>
+         </property>
          <property name="widgetResizable">
           <bool>true</bool>
          </property>
@@ -74,8 +110,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>335</width>
-            <height>724</height>
+            <width>354</width>
+            <height>739</height>
            </rect>
           </property>
          </widget>
@@ -91,7 +127,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1080</width>
+     <width>1079</width>
      <height>26</height>
     </rect>
    </property>
