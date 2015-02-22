@@ -28,19 +28,24 @@ void graphicsHitboxItem::initialisation()
     GamePos = QPoint(0, 0);
     // hitbox => keep item invisible
     setPen( Qt::NoPen );
-    setBrush( QBrush(Qt::transparent /*yellow*/) );
+    setBrush( QBrush(Qt::transparent) );
+
     // set behavior
     setAcceptHoverEvents(true);
     setFlag( QGraphicsItem::ItemIsMovable, false);
     setFlag( QGraphicsItem::ItemIsSelectable, false);
-
 }
 
 void graphicsHitboxItem::​hoverEnterEvent(QGraphicsSceneHoverEvent* event)
 {
-    qDebug() << "graphicsHitboxItem::​hoverEnterEvent() !!!!!";
+    qDebug() << "graphicsHitboxItem::​hoverEnterEvent()";
     setBrush( QBrush(Qt::blue) );
     QGraphicsRectItem::hoverEnterEvent(event);
+}
+
+void graphicsHitboxItem::hoverMoveEvent(QGraphicsSceneHoverEvent* event)
+{
+    qDebug() << "graphicsHitboxItem::hoverMoveEvent()";
 }
 
 void graphicsHitboxItem::hoverLeaveEvent(QGraphicsSceneHoverEvent* event)

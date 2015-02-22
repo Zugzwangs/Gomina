@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1079</width>
-    <height>794</height>
+    <width>905</width>
+    <height>687</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -68,6 +68,15 @@
            <height>200</height>
           </size>
          </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="lineWidth">
+          <number>0</number>
+         </property>
         </widget>
        </item>
       </layout>
@@ -81,9 +90,9 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <layout class="QHBoxLayout" name="HudFrame_Layout">
        <property name="spacing">
-        <number>0</number>
+        <number>5</number>
        </property>
        <property name="leftMargin">
         <number>0</number>
@@ -97,26 +106,6 @@
        <property name="bottomMargin">
         <number>0</number>
        </property>
-       <item>
-        <widget class="GameHud" name="scrollArea">
-         <property name="sizeAdjustPolicy">
-          <enum>QAbstractScrollArea::AdjustToContents</enum>
-         </property>
-         <property name="widgetResizable">
-          <bool>true</bool>
-         </property>
-         <widget class="QWidget" name="scrollAreaWidgetContents">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>354</width>
-            <height>739</height>
-           </rect>
-          </property>
-         </widget>
-        </widget>
-       </item>
       </layout>
      </widget>
     </item>
@@ -127,7 +116,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1079</width>
+     <width>905</width>
      <height>26</height>
     </rect>
    </property>
@@ -231,12 +220,6 @@
    <class>GobanView</class>
    <extends>QGraphicsView</extends>
    <header location="global">gobanview.h</header>
-  </customwidget>
-  <customwidget>
-   <class>GameHud</class>
-   <extends>QScrollArea</extends>
-   <header location="global">gamehud.h</header>
-   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>

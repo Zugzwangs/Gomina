@@ -539,6 +539,16 @@ release\moc\moc_mainwindow.cpp: C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QMai
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qscrollarea.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractscrollarea.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qframe.h \
+		..\src\gui\gobanview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QGraphicsView \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qgraphicsview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qpainter.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qtextoption.h \
+		..\src\engine\gameengine.h \
+		..\src\engine\goban.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QSize \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QPoint \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVector \
 		..\src\gui\mainwindow.h
 	C:\Qt\5.4\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.4/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/Dev/Qt/Gomina/src -IC:/Qt/5.4/msvc2010_opengl/include -IC:/Qt/5.4/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.4/msvc2010_opengl/include/QtGui -IC:/Qt/5.4/msvc2010_opengl/include/QtNetwork -IC:/Qt/5.4/msvc2010_opengl/include/QtCore -I. ..\src\gui\mainwindow.h -o release\moc\moc_mainwindow.cpp
 
@@ -2119,6 +2129,16 @@ release\obj\main.obj: ..\src\main.cpp ..\src\gui\mainwindow.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qscrollarea.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractscrollarea.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qframe.h \
+		..\src\gui\gobanview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QGraphicsView \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qgraphicsview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qpainter.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qtextoption.h \
+		..\src\engine\gameengine.h \
+		..\src\engine\goban.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QSize \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QPoint \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVector \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QApplication \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qapplication.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcoreapplication.h \
@@ -2246,7 +2266,20 @@ release\obj\mainwindow.obj: ..\src\gui\mainwindow.cpp ..\src\gui\mainwindow.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qscrollarea.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractscrollarea.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qframe.h \
-		release\ui\ui_mainwindow.h
+		..\src\gui\gobanview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QGraphicsView \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qgraphicsview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qpainter.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qtextoption.h \
+		..\src\engine\gameengine.h \
+		..\src\engine\goban.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QSize \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QPoint \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVector \
+		release\ui\ui_mainwindow.h \
+		..\src\gui\optionsdialog.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QDialog \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qdialog.h
 
 release\obj\gobanview.obj: ..\src\gui\gobanview.cpp ..\src\gui\gobanview.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QGraphicsView \
@@ -2358,7 +2391,8 @@ release\obj\gobanview.obj: ..\src\gui\gobanview.cpp ..\src\gui\gobanview.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qfiledevice.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvector2d.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qtouchdevice.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qgraphicsscene.h
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qgraphicsscene.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QDebug
 
 release\obj\gobanscene.obj: ..\src\gui\gobanscene.cpp C:\Qt\5.4\msvc2010_opengl\include\QtCore\QDebug \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qdebug.h \

@@ -21,7 +21,8 @@ MainWindow::MainWindow(GameEngine *GE, QWidget *parent) :  QMainWindow(parent), 
     ui->goban_view->setScene(goban_scene);
 
     // setup the HUD part
-    Hud = new GameHud(ui->HudFrame);
+    Hud = new GameHud();
+    ui->HudFrame->layout()->addWidget(Hud);
 
     // keep the pointer to the game's engine
     Gomenige = GE;

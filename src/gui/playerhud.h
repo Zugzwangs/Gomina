@@ -6,11 +6,11 @@
 #ifndef PLAYERHUD_H
 #define PLAYERHUD_H
 
-#include <QScrollArea>
+#include <QFrame>
 
-namespace Ui {  class PlayerHud;    }
+namespace Ui { class PlayerHud;  }
 
-class PlayerHud : public QScrollArea
+class PlayerHud : public QFrame
 {
     Q_OBJECT
 

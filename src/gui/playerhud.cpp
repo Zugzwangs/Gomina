@@ -5,8 +5,9 @@
 
 #include "playerhud.h"
 #include "ui_playerhud.h"
+#include <QDebug>
 
-PlayerHud::PlayerHud(QWidget *parent) : QScrollArea(parent), ui(new Ui::PlayerHud)
+PlayerHud::PlayerHud(QWidget *parent) : QFrame(parent), ui(new Ui::PlayerHud)
 {
     ui->setupUi(this);
 }

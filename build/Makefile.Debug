@@ -551,6 +551,16 @@ debug\moc\moc_mainwindow.cpp: C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QMainW
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qscrollarea.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractscrollarea.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qframe.h \
+		..\src\gui\gobanview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QGraphicsView \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qgraphicsview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qpainter.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qtextoption.h \
+		..\src\engine\gameengine.h \
+		..\src\engine\goban.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QSize \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QPoint \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVector \
 		..\src\gui\mainwindow.h
 	C:\Qt\5.4\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.4/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/Dev/Qt/Gomina/src -IC:/Qt/5.4/msvc2010_opengl/include -IC:/Qt/5.4/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.4/msvc2010_opengl/include/QtGui -IC:/Qt/5.4/msvc2010_opengl/include/QtNetwork -IC:/Qt/5.4/msvc2010_opengl/include/QtCore -I. ..\src\gui\mainwindow.h -o debug\moc\moc_mainwindow.cpp
 
@@ -2131,6 +2141,16 @@ debug\obj\main.obj: ..\src\main.cpp ..\src\gui\mainwindow.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qscrollarea.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractscrollarea.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qframe.h \
+		..\src\gui\gobanview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QGraphicsView \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qgraphicsview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qpainter.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qtextoption.h \
+		..\src\engine\gameengine.h \
+		..\src\engine\goban.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QSize \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QPoint \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVector \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QApplication \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qapplication.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcoreapplication.h \
@@ -2258,7 +2278,62 @@ debug\obj\mainwindow.obj: ..\src\gui\mainwindow.cpp ..\src\gui\mainwindow.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qscrollarea.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractscrollarea.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qframe.h \
-		debug\ui\ui_mainwindow.h
+		..\src\gui\gobanview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QGraphicsView \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qgraphicsview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qpainter.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qtextoption.h \
+		..\src\engine\gameengine.h \
+		..\src\engine\goban.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QSize \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QPoint \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVector \
+		debug\ui\ui_mainwindow.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVariant \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QAction \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qaction.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QApplication \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qeventloop.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qguiapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qinputmethod.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QFrame \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qlayout.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QHeaderView \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvalidator.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qregularexpression.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyle.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QMenu \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qmenu.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QMenuBar \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qmenubar.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QStatusBar \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstatusbar.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QVBoxLayout \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QWidget \
+		..\src\gui\optionsdialog.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QDialog \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qdialog.h
 
 debug\obj\gobanview.obj: ..\src\gui\gobanview.cpp ..\src\gui\gobanview.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QGraphicsView \
@@ -2370,7 +2445,8 @@ debug\obj\gobanview.obj: ..\src\gui\gobanview.cpp ..\src\gui\gobanview.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qfiledevice.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvector2d.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qtouchdevice.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qgraphicsscene.h
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qgraphicsscene.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QDebug
 
 debug\obj\gobanscene.obj: ..\src\gui\gobanscene.cpp C:\Qt\5.4\msvc2010_opengl\include\QtCore\QDebug \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qdebug.h \
@@ -2573,7 +2649,51 @@ debug\obj\optionsdialog.obj: ..\src\gui\optionsdialog.cpp ..\src\gui\optionsdial
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qfiledevice.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvector2d.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qtouchdevice.h \
-		debug\ui\ui_optionsdialog.h
+		debug\ui\ui_optionsdialog.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVariant \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QAction \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qaction.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qicon.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QApplication \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qeventloop.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qguiapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qinputmethod.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QDialogButtonBox \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qdialogbuttonbox.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QFrame \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qframe.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qlayout.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QHeaderView \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvalidator.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qregularexpression.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyle.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QListView \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qlistview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QSpacerItem \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QVBoxLayout
 
 debug\obj\gamehud.obj: ..\src\gui\gamehud.cpp ..\src\gui\gamehud.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QScrollArea \
@@ -2681,7 +2801,45 @@ debug\obj\gamehud.obj: ..\src\gui\gamehud.cpp ..\src\gui\gamehud.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qfiledevice.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvector2d.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qtouchdevice.h \
-		debug\ui\ui_gamehud.h
+		debug\ui\ui_gamehud.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVariant \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QAction \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qaction.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qicon.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QApplication \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qeventloop.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qguiapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qinputmethod.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QFrame \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QHeaderView \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvalidator.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qregularexpression.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyle.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QSpacerItem \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QVBoxLayout \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qlayout.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QWidget
 
 debug\obj\graphicstoneitem.obj: ..\src\gui\graphicstoneitem.cpp ..\src\gui\graphicstoneitem.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QGraphicsEllipseItem \
@@ -3079,7 +3237,47 @@ debug\obj\playerhud.obj: ..\src\gui\playerhud.cpp ..\src\gui\playerhud.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qfiledevice.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvector2d.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qtouchdevice.h \
-		debug\ui\ui_playerhud.h
+		debug\ui\ui_playerhud.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVariant \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QAction \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qaction.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qicon.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QApplication \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qeventloop.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qguiapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qinputmethod.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QFrame \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qlayout.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QHeaderView \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvalidator.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qregularexpression.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyle.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QLabel \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qlabel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QVBoxLayout \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QWidget
 
 debug\obj\historicalhud.obj: ..\src\gui\historicalhud.cpp ..\src\gui\historicalhud.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QScrollArea \
@@ -3187,7 +3385,38 @@ debug\obj\historicalhud.obj: ..\src\gui\historicalhud.cpp ..\src\gui\historicalh
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qfiledevice.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvector2d.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qtouchdevice.h \
-		debug\ui\ui_historicalhud.h
+		debug\ui\ui_historicalhud.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVariant \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QAction \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qaction.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qicon.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QApplication \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qeventloop.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qguiapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qinputmethod.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QHeaderView \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvalidator.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qregularexpression.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyle.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QWidget
 
 debug\obj\chatwindow.obj: ..\src\gui\chatwindow.cpp ..\src\gui\chatwindow.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QScrollArea \
@@ -3295,7 +3524,38 @@ debug\obj\chatwindow.obj: ..\src\gui\chatwindow.cpp ..\src\gui\chatwindow.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qfiledevice.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvector2d.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qtouchdevice.h \
-		debug\ui\ui_chatwindow.h
+		debug\ui\ui_chatwindow.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVariant \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QAction \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qaction.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qicon.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QApplication \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qeventloop.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qguiapplication.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qinputmethod.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QButtonGroup \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QHeaderView \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qheaderview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvalidator.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qregularexpression.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyle.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QWidget
 
 debug\obj\blitz.obj: ..\src\engine\blitz.cpp ..\src\engine\blitz.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QObject \

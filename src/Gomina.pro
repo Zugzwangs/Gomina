@@ -86,7 +86,7 @@ FORMS   +=  gui/mainwindow.ui \
 OTHER_FILES += "Road map.txt" \
                brain/vectorAddition.cu
 
-RESOURCES += res.qrc
+RESOURCES += res.qrc \
 
 RC_FILE = logo_link.rc
 
