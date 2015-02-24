@@ -31,6 +31,7 @@ SOURCES +=  main.cpp \
             gui/gobanview.cpp \
             gui/gobanscene.cpp \
             gui/optionsdialog.cpp \
+            gui/aboutwindow.cpp \
             gui/gamehud.cpp \
             gui/graphicstoneitem.cpp \
             gui/graphicsgobanitem.cpp \
@@ -49,7 +50,8 @@ SOURCES +=  main.cpp \
             brain/test_call_cuda.cpp \
             network/networkcenter.cpp \
             pathprovider.cpp \
-            logmanager.cpp
+            logmanager.cpp \
+            gui/dialogfindplayer.cpp
 
 HEADERS +=  gui/mainwindow.h \
             gui/gobanview.h \
@@ -57,6 +59,7 @@ HEADERS +=  gui/mainwindow.h \
             gui/optionsdialog.h \
             gui/gamehud.h \
             gui/graphicstoneitem.h \
+            gui/aboutwindow.h \
             gui/graphicsgobanitem.h \
             gui/graphicshitboxitem.h \
             gui/playerhud.h \
@@ -73,14 +76,17 @@ HEADERS +=  gui/mainwindow.h \
             brain/test_call_cuda.h \
             network/networkcenter.h \
             pathprovider.h \
-            logmanager.h
+            logmanager.h \
+            gui/dialogfindplayer.h
 
 FORMS   +=  gui/mainwindow.ui \
             gui/optionsdialog.ui \
+            gui/aboutwindow.ui \
             gui/gamehud.ui \
             gui/playerhud.ui \
             gui/historicalhud.ui \
-            gui/chatwindow.ui
+            gui/chatwindow.ui \
+            gui/dialogfindplayer.ui
 
 # This makes the .cu files appear in your project
 OTHER_FILES += "Road map.txt" \

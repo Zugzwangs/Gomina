@@ -3,9 +3,14 @@
 //
 /*******************************************************/
 
+#include <QFileDialog>
+#include <QDebug>
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "optionsdialog.h"
+#include "aboutwindow.h"
+#include "dialogfindplayer.h"
 
 MainWindow::MainWindow(GameEngine *GE, QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -30,10 +35,13 @@ MainWindow::MainWindow(GameEngine *GE, QWidget *parent) :  QMainWindow(parent), 
     // connect modules together
     connect( goban_item, SIGNAL(clickOnCase(QPoint)), Gomenige, SLOT(playedOn(QPoint)) );
     connect( Gomenige, SIGNAL(gobanChanged(QPoint,int)), goban_item, SLOT(playOnCase(QPoint,int)) );
+
     // connect actions from menu
     connect( ui->actionMenu, SIGNAL(triggered()), this, SLOT(OpenMenuOption()) );
     connect(ui->actionAbout_Gomina, SIGNAL(triggered()), this, SLOT(OpenAbout()) );
-
+    connect(ui->actionLoad_Game, SIGNAL(triggered()), this, SLOT(OpenMenuLoadGame()) );
+    connect(ui->actionSave_Game, SIGNAL(triggered()), this, SLOT(OpenMenuSaveGame()) );
+    connect(ui->actionFind_Player, SIGNAL(triggered()), this, SLOT(OpenDialogFindPlayer()) );
 }
 
 void MainWindow::OpenMenuOption()
@@ -42,10 +50,50 @@ void MainWindow::OpenMenuOption()
     Options.exec();
 }
 
+void MainWindow::OpenMenuLoadGame()
+{
+QString fileName;
+
+    //use path provider here to get Last dir used
+    fileName = QFileDialog::getOpenFileName(this, tr("Load game"), "", "Game File (*.sgf)");
+    qDebug() << "OpenMenuLoadGame: " << fileName;
+    if ( fileName.isEmpty() )
+        {
+        return;
+        }
+    else
+        {
+        return;
+        }
+}
+
+void MainWindow::OpenMenuSaveGame()
+{
+QString fileName = "";
+QString lastDir = "";    //use path provider here to get Last dir used
+
+    fileName = QFileDialog::getSaveFileName(this, tr("Save File"), lastDir, "Game Files (*.sgf)" );
+    qDebug() << "OpenMenuSaveGame: " << fileName;
+    if ( fileName.isEmpty() )
+        {
+        return;
+        }
+    else
+        {
+        return;
+        }
+}
+
+void MainWindow::OpenDialogFindPlayer()
+{
+    DialogFindPlayer FindPlayer(this);
+    FindPlayer.exec();
+}
 
 void MainWindow::OpenAbout()
 {
-
+    AboutWindow About(this);
+    About.exec();
 }
 
 MainWindow::~MainWindow()

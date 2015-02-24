@@ -26,6 +26,9 @@ public:
 private slots:
     void OpenMenuOption();
     void OpenAbout();
+    void OpenMenuLoadGame();
+    void OpenMenuSaveGame();
+    void OpenDialogFindPlayer();
 
 private:
     Ui::MainWindow *ui;
