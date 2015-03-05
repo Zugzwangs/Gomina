@@ -1,0 +1,8 @@
+**************************************
+*Pallette de couleurs
+**************************************
+
+marron : #6B381F
+marron pastel : #AF7C66
+du blanc : #FFFFFF
+rose : #C3ADB0
