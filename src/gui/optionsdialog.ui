@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>862</width>
-    <height>551</height>
+    <width>1334</width>
+    <height>936</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <number>5</number>
    </property>
    <item>
-    <widget class="QFrame" name="frame_3">
+    <widget class="QFrame" name="frameHeader">
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>
@@ -58,7 +58,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="MainTitle">
         <property name="font">
          <font>
           <family>Arial Black</family>
@@ -71,7 +71,7 @@
          <number>0</number>
         </property>
         <property name="text">
-         <string>Network</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -79,7 +79,19 @@
     </widget>
    </item>
    <item>
-    <widget class="QFrame" name="frame">
+    <widget class="QFrame" name="frameContent">
+     <property name="minimumSize">
+      <size>
+       <width>200</width>
+       <height>150</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>1650</width>
+       <height>1050</height>
+      </size>
+     </property>
      <property name="layoutDirection">
       <enum>Qt::LeftToRight</enum>
      </property>
@@ -106,7 +118,7 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="QListView" name="listView">
+       <widget class="QListView" name="mainMenuList">
         <property name="minimumSize">
          <size>
           <width>200</width>
@@ -128,7 +140,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="frame_2">
+       <widget class="QFrame" name="frameBody">
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
         </property>
@@ -138,40 +150,101 @@
         <property name="lineWidth">
          <number>0</number>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <property name="spacing">
+        <widget class="QTabWidget" name="Network">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>511</width>
+           <height>361</height>
+          </rect>
+         </property>
+         <property name="tabShape">
+          <enum>QTabWidget::Rounded</enum>
+         </property>
+         <property name="currentIndex">
           <number>0</number>
          </property>
-         <property name="leftMargin">
-          <number>0</number>
+         <widget class="QWidget" name="tab">
+          <attribute name="title">
+           <string>Serveurs</string>
+          </attribute>
+         </widget>
+         <widget class="QWidget" name="tab_2">
+          <attribute name="title">
+           <string>Tab 2</string>
+          </attribute>
+         </widget>
+        </widget>
+        <widget class="QTabWidget" name="Layout">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>370</y>
+           <width>491</width>
+           <height>471</height>
+          </rect>
          </property>
-         <property name="topMargin">
-          <number>0</number>
+         <widget class="QWidget" name="tab_3">
+          <attribute name="title">
+           <string>General</string>
+          </attribute>
+         </widget>
+         <widget class="QWidget" name="tab_4">
+          <attribute name="title">
+           <string>Tab 2</string>
+          </attribute>
+         </widget>
+        </widget>
+        <widget class="QTabWidget" name="Profil">
+         <property name="geometry">
+          <rect>
+           <x>530</x>
+           <y>10</y>
+           <width>561</width>
+           <height>351</height>
+          </rect>
          </property>
-         <property name="rightMargin">
-          <number>0</number>
+         <property name="currentIndex">
+          <number>1</number>
          </property>
-         <property name="bottomMargin">
-          <number>0</number>
+         <widget class="QWidget" name="tab_5">
+          <attribute name="title">
+           <string>Profil</string>
+          </attribute>
+         </widget>
+         <widget class="QWidget" name="tab_6">
+          <attribute name="title">
+           <string>Tab 2</string>
+          </attribute>
+         </widget>
+        </widget>
+        <widget class="QTabWidget" name="Game">
+         <property name="geometry">
+          <rect>
+           <x>530</x>
+           <y>380</y>
+           <width>571</width>
+           <height>461</height>
+          </rect>
          </property>
-         <item>
-          <widget class="QTabWidget" name="tabNetwork">
-           <property name="currentIndex">
-            <number>1</number>
-           </property>
-           <widget class="QWidget" name="tab">
-            <attribute name="title">
-             <string>Serveurs</string>
-            </attribute>
-           </widget>
-           <widget class="QWidget" name="tab_2">
-            <attribute name="title">
-             <string>Tab 2</string>
-            </attribute>
-           </widget>
-          </widget>
-         </item>
-        </layout>
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
+         <widget class="QWidget" name="tab_7">
+          <attribute name="title">
+           <string>CPU</string>
+          </attribute>
+         </widget>
+         <widget class="QWidget" name="tab_8">
+          <attribute name="title">
+           <string>Tab 2</string>
+          </attribute>
+         </widget>
+        </widget>
        </widget>
       </item>
      </layout>
