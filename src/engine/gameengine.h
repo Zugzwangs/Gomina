@@ -50,6 +50,8 @@ signals:
     void gameAborded();
     void gameEnd();
     void activePlayerChanged();
+    void requestPlay();
+    void digMore();
 
 };
 
