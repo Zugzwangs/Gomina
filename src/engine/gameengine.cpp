@@ -14,7 +14,37 @@ GameEngine::GameEngine(QObject *parent) : QObject(parent)
 
 }
 
-void GameEngine::playedOn(QPoint p)
+void GameEngine::startGame()
+{
+
+}
+
+void GameEngine::abordGame()
+{
+
+}
+
+void GameEngine::restartGame()
+{
+
+}
+
+void GameEngine::loadProfile()
+{
+
+}
+
+void GameEngine::playerQuit()
+{
+
+}
+
+void GameEngine::playerAbdique()
+{
+
+}
+
+void GameEngine::playerPlay(QPoint p)
 {
     // a player click on case p and if its free
     if ( myGoban->getValue(p)==-1 )
@@ -22,6 +52,26 @@ void GameEngine::playedOn(QPoint p)
         myGoban->setValue(p, 0);
         emit gobanChanged(p, 0);
         }
+}
+
+void GameEngine::backTrackPlay()
+{
+
+}
+
+void GameEngine::savePosition()
+{
+
+}
+
+void GameEngine::loadPosition()
+{
+
+}
+
+void GameEngine::changeGameMod()
+{
+
 }
 
 GameEngine::~GameEngine()
