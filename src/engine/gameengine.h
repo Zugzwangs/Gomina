@@ -2,7 +2,6 @@
 //
 //
 /*******************************************************/
-
 #ifndef GAMEENGINE_H
 #define GAMEENGINE_H
 
@@ -12,7 +11,8 @@
 #include "cpuplayer.h"
 #include "blitz.h"
 #include "gamehistory.h"
-
+#include "gamearbiter.h"
+#include "gobandiff.h"
 
 class GameEngine : public QObject
 {
@@ -38,9 +38,10 @@ public slots:
 private:
     Goban* myGoban;
     GameHistory* historic;
+    GameArbiter* arbiter;
+    Blitz* myBlitz;
     Player* player_1;
     Player* player_2;
-    Blitz* myBlitz;
 
 signals:
     void gobanChanged(QPoint p, int c);
@@ -49,6 +50,7 @@ signals:
     void opponentConnected();
     void gameAborded();
     void gameEnd();
+    void gameStart();
     void activePlayerChanged();
     void requestPlay();
     void digMore();

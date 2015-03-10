@@ -2,15 +2,16 @@
 //
 //
 /*******************************************************/
-#include "gamehistory.h"
 
-GameHistory::GameHistory(QObject *parent) : QObject(parent)
+#ifndef GOBANDIFF_H
+#define GOBANDIFF_H
+
+
+class GobanDiff
 {
+public:
+    GobanDiff();
+    ~GobanDiff();
+};
 
-}
-
-GameHistory::~GameHistory()
-{
-
-}
-
+#endif // GOBANDIFF_H

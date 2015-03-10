@@ -2,14 +2,14 @@
 //
 //
 /*******************************************************/
-#include "gamehistory.h"
+#include "gobandiff.h"
 
-GameHistory::GameHistory(QObject *parent) : QObject(parent)
+GobanDiff::GobanDiff()
 {
 
 }
 
-GameHistory::~GameHistory()
+GobanDiff::~GobanDiff()
 {
 
 }

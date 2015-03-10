@@ -51,7 +51,8 @@ SOURCES +=  main.cpp \
             network/networkcenter.cpp \
             pathprovider.cpp \
             logmanager.cpp \
-            gui/dialogfindplayer.cpp
+            gui/dialogfindplayer.cpp \
+    engine/gobandiff.cpp
 
 HEADERS +=  gui/mainwindow.h \
             gui/gobanview.h \
@@ -77,7 +78,8 @@ HEADERS +=  gui/mainwindow.h \
             network/networkcenter.h \
             pathprovider.h \
             logmanager.h \
-            gui/dialogfindplayer.h
+            gui/dialogfindplayer.h \
+    engine/gobandiff.h
 
 FORMS   +=  gui/mainwindow.ui \
             gui/optionsdialog.ui \
