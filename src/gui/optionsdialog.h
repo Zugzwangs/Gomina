@@ -29,6 +29,7 @@ private:
 
 private slots:
     void changeMenu(QItemSelection selected, QItemSelection deselected);
+    void saveSettings(); // ?
 
 };
 

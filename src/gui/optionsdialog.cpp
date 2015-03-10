@@ -12,12 +12,13 @@ OptionsDialog::OptionsDialog(QWidget *parent) : QDialog(parent), ui(new Ui::Opti
     // init UI
     ui->setupUi(this);
 
-    // construct Main menu items
+    // construct main menu model
     mainList = new QStandardItemModel(this);
-
+    // for each TabWidget created into designer
     MenuBodyList = ui->frameBody->findChildren<QTabWidget *>();
     if (MenuBodyList.size() > 0)
         {
+        //
         QHBoxLayout *layout = new QHBoxLayout;
         layout->setContentsMargins(0, 0, 0, 0);
         for(int i=0; i<MenuBodyList.size(); i++)
@@ -37,7 +38,11 @@ OptionsDialog::OptionsDialog(QWidget *parent) : QDialog(parent), ui(new Ui::Opti
         }
 
     ui->mainMenuList->setModel(mainList);
-    ui->mainMenuList->
+
+    // open the .ini file and get values stored
+
+
+    //
     connect(ui->mainMenuList->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)), this, SLOT(changeMenu(QItemSelection,QItemSelection)));
 }
 
@@ -81,5 +86,6 @@ QTabWidget* OptionsDialog::getBodyTabByName(QString name)
 
 OptionsDialog::~OptionsDialog()
 {
+    //
     delete ui;
 }
