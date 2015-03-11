@@ -70,8 +70,6 @@ void OptionsDialog::changeMenu(QItemSelection selected, QItemSelection deselecte
     return;
 }
 
-
-
 QTabWidget* OptionsDialog::getBodyTabByName(QString name)
 {
     for(int i=0; i<MenuBodyList.size(); i++)
@@ -82,6 +80,11 @@ QTabWidget* OptionsDialog::getBodyTabByName(QString name)
             }
         }
     return NULL;
+}
+
+void OptionsDialog::saveSettings()
+{
+
 }
 
 OptionsDialog::~OptionsDialog()

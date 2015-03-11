@@ -17,9 +17,7 @@ public:
     ~Player();
     virtual void init() = 0;
 
-signals:
 
-public slots:
 };
 
 #endif // PLAYER_H

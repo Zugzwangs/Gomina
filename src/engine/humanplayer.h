@@ -15,7 +15,7 @@ class humanplayer : public Player
 public:
     explicit humanplayer(QObject *parent = 0);
     ~humanplayer();
-
+    virtual void init();
 };
 
 #endif // HUMANPLAYER_H

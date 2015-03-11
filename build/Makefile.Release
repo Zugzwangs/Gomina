@@ -68,7 +68,8 @@ SOURCES       = ..\src\main.cpp \
 		..\src\network\networkcenter.cpp \
 		..\src\pathprovider.cpp \
 		..\src\logmanager.cpp \
-		..\src\gui\dialogfindplayer.cpp release\rcc\qrc_res.cpp \
+		..\src\gui\dialogfindplayer.cpp \
+		..\src\engine\gobandiff.cpp release\rcc\qrc_res.cpp \
 		release\moc\moc_mainwindow.cpp \
 		release\moc\moc_gobanview.cpp \
 		release\moc\moc_gobanscene.cpp \
@@ -116,6 +117,7 @@ OBJECTS       = release\obj\main.obj \
 		release\obj\pathprovider.obj \
 		release\obj\logmanager.obj \
 		release\obj\dialogfindplayer.obj \
+		release\obj\gobandiff.obj \
 		release\obj\qrc_res.obj \
 		release\obj\moc_mainwindow.obj \
 		release\obj\moc_gobanview.obj \
@@ -163,7 +165,8 @@ DIST          =  ..\src\gui\mainwindow.h \
 		..\src\network\networkcenter.h \
 		..\src\pathprovider.h \
 		..\src\logmanager.h \
-		..\src\gui\dialogfindplayer.h ..\src\main.cpp \
+		..\src\gui\dialogfindplayer.h \
+		..\src\engine\gobandiff.h ..\src\main.cpp \
 		..\src\gui\mainwindow.cpp \
 		..\src\gui\gobanview.cpp \
 		..\src\gui\gobanscene.cpp \
@@ -188,7 +191,8 @@ DIST          =  ..\src\gui\mainwindow.h \
 		..\src\network\networkcenter.cpp \
 		..\src\pathprovider.cpp \
 		..\src\logmanager.cpp \
-		..\src\gui\dialogfindplayer.cpp
+		..\src\gui\dialogfindplayer.cpp \
+		..\src\engine\gobandiff.cpp
 QMAKE_TARGET  = Gomina
 DESTDIR        = ..\bin\ #avoid trailing-slash linebreak
 TARGET         = Gomina.exe
@@ -401,7 +405,7 @@ dist:
 	$(ZIP) Gomina.zip $(SOURCES) $(DIST) ..\src\Gomina.pro C:\Qt\5.4\msvc2010_opengl\mkspecs\features\spec_pre.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\common\shell-win32.conf C:\Qt\5.4\msvc2010_opengl\mkspecs\qconfig.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_clucene_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_core.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_declarative.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_declarative_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_enginio.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_enginio_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_help.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_location.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_network.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_platformsupport_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_script.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_script_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_webkit.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_webkit_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_webkitwidgets.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_webkitwidgets_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.4\msvc2010_opengl\mkspecs\features\qt_functions.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\qt_config.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\win32\qt_config.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\win32-msvc2010\qmake.conf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\spec_post.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\exclusive_builds.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\default_pre.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\win32\default_pre.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\resolve_config.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\default_post.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\build_pass.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\win32\rtti.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\precompile_header.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\warn_on.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\qt.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\resources.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\moc.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\win32\opengl.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\uic.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\win32\windows.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\testcase_targets.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\exceptions.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\yacc.prf C:\Qt\5.4\msvc2010_opengl\mkspecs\features\lex.prf ..\src\Gomina.pro ..\src\res.qrc C:/Qt/5.4/msvc2010_opengl/lib/qtmain.prl C:/Qt/5.4/msvc2010_opengl/lib/Qt5Core.prl C:/Qt/5.4/msvc2010_opengl/lib/Qt5Widgets.prl C:/Qt/5.4/msvc2010_opengl/lib/Qt5Gui.prl C:/Qt/5.4/msvc2010_opengl/lib/Qt5Network.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\obj\main.obj release\obj\mainwindow.obj release\obj\gobanview.obj release\obj\gobanscene.obj release\obj\optionsdialog.obj release\obj\aboutwindow.obj release\obj\gamehud.obj release\obj\graphicstoneitem.obj release\obj\graphicsgobanitem.obj release\obj\graphicshitboxitem.obj release\obj\playerhud.obj release\obj\historicalhud.obj release\obj\chatwindow.obj release\obj\blitz.obj release\obj\cpuplayer.obj release\obj\humanplayer.obj release\obj\player.obj release\obj\gamearbiter.obj release\obj\gameengine.obj release\obj\gamehistory.obj release\obj\goban.obj release\obj\test_call_cuda.obj release\obj\networkcenter.obj release\obj\pathprovider.obj release\obj\logmanager.obj release\obj\dialogfindplayer.obj release\obj\qrc_res.obj release\obj\moc_mainwindow.obj release\obj\moc_gobanview.obj release\obj\moc_gobanscene.obj release\obj\moc_optionsdialog.obj release\obj\moc_gamehud.obj release\obj\moc_aboutwindow.obj release\obj\moc_graphicsgobanitem.obj release\obj\moc_graphicshitboxitem.obj release\obj\moc_playerhud.obj release\obj\moc_historicalhud.obj release\obj\moc_chatwindow.obj release\obj\moc_blitz.obj release\obj\moc_cpuplayer.obj release\obj\moc_humanplayer.obj release\obj\moc_player.obj release\obj\moc_gamearbiter.obj release\obj\moc_gameengine.obj release\obj\moc_gamehistory.obj release\obj\moc_goban.obj release\obj\moc_networkcenter.obj release\obj\moc_dialogfindplayer.obj
+	-$(DEL_FILE) release\obj\main.obj release\obj\mainwindow.obj release\obj\gobanview.obj release\obj\gobanscene.obj release\obj\optionsdialog.obj release\obj\aboutwindow.obj release\obj\gamehud.obj release\obj\graphicstoneitem.obj release\obj\graphicsgobanitem.obj release\obj\graphicshitboxitem.obj release\obj\playerhud.obj release\obj\historicalhud.obj release\obj\chatwindow.obj release\obj\blitz.obj release\obj\cpuplayer.obj release\obj\humanplayer.obj release\obj\player.obj release\obj\gamearbiter.obj release\obj\gameengine.obj release\obj\gamehistory.obj release\obj\goban.obj release\obj\test_call_cuda.obj release\obj\networkcenter.obj release\obj\pathprovider.obj release\obj\logmanager.obj release\obj\dialogfindplayer.obj release\obj\gobandiff.obj release\obj\qrc_res.obj release\obj\moc_mainwindow.obj release\obj\moc_gobanview.obj release\obj\moc_gobanscene.obj release\obj\moc_optionsdialog.obj release\obj\moc_gamehud.obj release\obj\moc_aboutwindow.obj release\obj\moc_graphicsgobanitem.obj release\obj\moc_graphicshitboxitem.obj release\obj\moc_playerhud.obj release\obj\moc_historicalhud.obj release\obj\moc_chatwindow.obj release\obj\moc_blitz.obj release\obj\moc_cpuplayer.obj release\obj\moc_humanplayer.obj release\obj\moc_player.obj release\obj\moc_gamearbiter.obj release\obj\moc_gameengine.obj release\obj\moc_gamehistory.obj release\obj\moc_goban.obj release\obj\moc_networkcenter.obj release\obj\moc_dialogfindplayer.obj
 	-$(DEL_FILE) ..\bin\Gomina.exp ..\bin\Gomina.exe.embed.manifest
 	-$(DEL_FILE) D:\Dev\Qt\Gomina\build\release\obj\logo_link.res
 
@@ -561,6 +565,13 @@ release\moc\moc_mainwindow.cpp: C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QMai
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QSize \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QPoint \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVector \
+		..\src\engine\humanplayer.h \
+		..\src\engine\player.h \
+		..\src\engine\cpuplayer.h \
+		..\src\engine\blitz.h \
+		..\src\engine\gamehistory.h \
+		..\src\engine\gamearbiter.h \
+		..\src\engine\gobandiff.h \
 		..\src\gui\mainwindow.h
 	C:\Qt\5.4\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.4/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/Dev/Qt/Gomina/src -IC:/Qt/5.4/msvc2010_opengl/include -IC:/Qt/5.4/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.4/msvc2010_opengl/include/QtGui -IC:/Qt/5.4/msvc2010_opengl/include/QtNetwork -IC:/Qt/5.4/msvc2010_opengl/include/QtCore -I. ..\src\gui\mainwindow.h -o release\moc\moc_mainwindow.cpp
 
@@ -877,6 +888,29 @@ release\moc\moc_optionsdialog.cpp: C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\Q
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qfiledevice.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvector2d.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qtouchdevice.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QTableWidget \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtablewidget.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtableview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qframe.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvalidator.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qregularexpression.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qicon.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyle.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QTabWidget \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\QStandardItemModel \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qstandarditemmodel.h \
 		..\src\gui\optionsdialog.h
 	C:\Qt\5.4\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.4/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/Dev/Qt/Gomina/src -IC:/Qt/5.4/msvc2010_opengl/include -IC:/Qt/5.4/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.4/msvc2010_opengl/include/QtGui -IC:/Qt/5.4/msvc2010_opengl/include/QtNetwork -IC:/Qt/5.4/msvc2010_opengl/include/QtCore -I. ..\src\gui\optionsdialog.h -o release\moc\moc_optionsdialog.cpp
 
@@ -1923,6 +1957,13 @@ release\moc\moc_gameengine.cpp: C:\Qt\5.4\msvc2010_opengl\include\QtCore\QObject
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qpoint.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVector \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qvector.h \
+		..\src\engine\humanplayer.h \
+		..\src\engine\player.h \
+		..\src\engine\cpuplayer.h \
+		..\src\engine\blitz.h \
+		..\src\engine\gamehistory.h \
+		..\src\engine\gamearbiter.h \
+		..\src\engine\gobandiff.h \
 		..\src\engine\gameengine.h
 	C:\Qt\5.4\msvc2010_opengl\bin\moc.exe $(DEFINES) -D_MSC_VER=1600 -D_WIN32 -IC:/Qt/5.4/msvc2010_opengl/mkspecs/win32-msvc2010 -ID:/Dev/Qt/Gomina/src -IC:/Qt/5.4/msvc2010_opengl/include -IC:/Qt/5.4/msvc2010_opengl/include/QtWidgets -IC:/Qt/5.4/msvc2010_opengl/include/QtGui -IC:/Qt/5.4/msvc2010_opengl/include/QtNetwork -IC:/Qt/5.4/msvc2010_opengl/include/QtCore -I. ..\src\engine\gameengine.h -o release\moc\moc_gameengine.cpp
 
@@ -2367,6 +2408,13 @@ release\obj\main.obj: ..\src\main.cpp ..\src\gui\mainwindow.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QSize \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QPoint \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVector \
+		..\src\engine\humanplayer.h \
+		..\src\engine\player.h \
+		..\src\engine\cpuplayer.h \
+		..\src\engine\blitz.h \
+		..\src\engine\gamehistory.h \
+		..\src\engine\gamearbiter.h \
+		..\src\engine\gobandiff.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QApplication \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qapplication.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcoreapplication.h \
@@ -2510,9 +2558,35 @@ release\obj\mainwindow.obj: ..\src\gui\mainwindow.cpp C:\Qt\5.4\msvc2010_opengl\
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QSize \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QPoint \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVector \
+		..\src\engine\humanplayer.h \
+		..\src\engine\player.h \
+		..\src\engine\cpuplayer.h \
+		..\src\engine\blitz.h \
+		..\src\engine\gamehistory.h \
+		..\src\engine\gamearbiter.h \
+		..\src\engine\gobandiff.h \
 		release\ui\ui_mainwindow.h \
 		..\src\gui\optionsdialog.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QDialog \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QTableWidget \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtablewidget.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtableview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvalidator.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qregularexpression.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyle.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QTabWidget \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\QStandardItemModel \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qstandarditemmodel.h \
 		..\src\gui\aboutwindow.h \
 		..\src\gui\dialogfindplayer.h
 
@@ -2726,11 +2800,9 @@ release\obj\gobanscene.obj: ..\src\gui\gobanscene.cpp C:\Qt\5.4\msvc2010_opengl\
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QGraphicsRectItem \
 		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qgraphicsitem.h
 
-release\obj\optionsdialog.obj: ..\src\gui\optionsdialog.cpp ..\src\gui\optionsdialog.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QDialog \
-		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qdialog.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qwidget.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qwindowdefs.h \
+release\obj\optionsdialog.obj: ..\src\gui\optionsdialog.cpp C:\Qt\5.4\msvc2010_opengl\include\QtCore\QDebug \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qdebug.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qalgorithms.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qglobal.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qconfig.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qfeatures.h \
@@ -2759,21 +2831,24 @@ release\obj\optionsdialog.obj: ..\src\gui\optionsdialog.cpp ..\src\gui\optionsdi
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qglobalstatic.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qmutex.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qnumeric.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobjectdefs.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qnamespace.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobjectdefs_impl.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qwindowdefs_win.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobject.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qstring.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qhash.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qchar.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qbytearray.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qiterator.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qlist.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qrefcount.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qarraydata.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qstringbuilder.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qlist.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qalgorithms.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qiterator.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qbytearraylist.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qbytearray.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qnamespace.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qstring.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qstringbuilder.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qpair.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qmap.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qtextstream.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qiodevice.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobject.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobjectdefs.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobjectdefs_impl.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcoreevent.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qscopedpointer.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qmetatype.h \
@@ -2781,22 +2856,34 @@ release\obj\optionsdialog.obj: ..\src\gui\optionsdialog.cpp ..\src\gui\optionsdi
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcontainerfwd.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qisenum.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobject_impl.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qmargins.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qpaintdevice.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qrect.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qsize.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qlocale.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qvariant.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qstringlist.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qdatastream.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qregexp.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qstringmatcher.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qshareddata.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qvector.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qpoint.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qset.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcontiguouscache.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QHBoxLayout \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qboxlayout.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qlayout.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qrect.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qmargins.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qsize.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qgridlayout.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qwidget.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qpaintdevice.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qpalette.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qcolor.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qrgb.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qstringlist.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qdatastream.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qiodevice.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qpair.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qregexp.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qstringmatcher.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qbrush.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qvector.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qmatrix.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qpolygon.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qregion.h \
@@ -2807,29 +2894,45 @@ release\obj\optionsdialog.obj: ..\src\gui\optionsdialog.cpp ..\src\gui\optionsdi
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qpixelformat.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qpixmap.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qsharedpointer.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qshareddata.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qhash.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qsharedpointer_impl.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qfont.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qfontmetrics.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qfontinfo.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qsizepolicy.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qcursor.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qkeysequence.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qevent.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qvariant.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qmap.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qdebug.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qtextstream.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qlocale.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qset.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcontiguouscache.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qurl.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qurlquery.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qfile.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qfiledevice.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvector2d.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qtouchdevice.h \
+		..\src\gui\optionsdialog.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QDialog \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qdialog.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QTableWidget \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtablewidget.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtableview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qframe.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyleoption.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvalidator.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qregularexpression.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qicon.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qabstractslider.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qstyle.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtabbar.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qtabwidget.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\qrubberband.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtWidgets\QTabWidget \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\QStandardItemModel \
+		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qstandarditemmodel.h \
 		release\ui\ui_optionsdialog.h
 
 release\obj\aboutwindow.obj: ..\src\gui\aboutwindow.cpp ..\src\gui\aboutwindow.h \
@@ -3994,7 +4097,14 @@ release\obj\gameengine.obj: ..\src\engine\gameengine.cpp C:\Qt\5.4\msvc2010_open
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QSize \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qsize.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QPoint \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVector
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QVector \
+		..\src\engine\humanplayer.h \
+		..\src\engine\player.h \
+		..\src\engine\cpuplayer.h \
+		..\src\engine\blitz.h \
+		..\src\engine\gamehistory.h \
+		..\src\engine\gamearbiter.h \
+		..\src\engine\gobandiff.h
 
 release\obj\gamehistory.obj: ..\src\engine\gamehistory.cpp ..\src\engine\gamehistory.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QObject \
@@ -4285,6 +4395,8 @@ release\obj\dialogfindplayer.obj: ..\src\gui\dialogfindplayer.cpp ..\src\gui\dia
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qvector2d.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtGui\qtouchdevice.h \
 		release\ui\ui_dialogfindplayer.h
+
+release\obj\gobandiff.obj: ..\src\engine\gobandiff.cpp ..\src\engine\gobandiff.h
 
 release\obj\qrc_res.obj: release\rcc\qrc_res.cpp 
 

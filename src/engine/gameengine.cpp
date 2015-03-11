@@ -8,40 +8,89 @@
 GameEngine::GameEngine(QObject *parent) : QObject(parent)
 {
     /*------------------------------------------------*/
+    /*                  INIT THIS                     */
+    /*------------------------------------------------*/
+    setGameMode(Free);      //
+
+
+
+    /*------------------------------------------------*/
     /*                INIT COMPONENT                  */
     /*------------------------------------------------*/
 
     myGoban = new Goban(this);          // build goban data structure
 
-    historic = new GameHistory(this);   //
+    historic = new GameHistory(this);   // init history data structure
 
-    arbiter = new GameArbiter(this);    //
+    arbiter = new GameArbiter(this);    // init the game's rules manager
 
-    myBlitz = new Blitz(this);          //
+    myBlitz = new Blitz(this);          // create clock TODO maybe need 2 clocks one for blitz game and other for IA
 
-    player_1 = new Player(this);        //
+    player_1 = new humanplayer(this);   // init at least first player TODO : think that first player could be a cpuplayer
 
 
     /*------------------------------------------------*/
     /*              CONNECT COMPONENT                 */
     /*------------------------------------------------*/
 
-/*
-emit gobanChanged(QPoint p, int c);
-emit scoreChanged();
-emit profilLoaded();
-emit opponentConnected();
-emit gameAborded();
-emit gameEnd();
-emit activePlayerChanged();
-emit requestPlay();
-emit digMore();
-*/
+
+
 }
 
+void GameEngine::setGameMode(Mode mode)
+{
+    GameMode = mode;
+}
+
+void GameEngine::setGameStatus(Status stat)
+{
+    GameStatus = stat;
+}
+
+// TODO add lots of stuff
+void GameEngine::togglePause()
+{
+    switch (GameStatus)
+        {
+        case Running:
+            setGameStatus(Paused);
+            emit gamePaused();
+            break;
+
+        case Paused:
+            setGameStatus(Running);
+            emit gameWake();
+            break;
+
+        case Unstable:
+            qDebug() << "something wrong the game goes buggy";
+            break;
+
+        default:
+            break;
+        }
+}
+
+// TODO add lots of stuff
 void GameEngine::startGame()
 {
+    switch (GameMode)
+        {
+        case Nomode:
+            break;
 
+        case Free:
+            break;
+
+        case Solo:
+            break;
+
+        case Online:
+            break;
+
+        default:
+            break;
+        }
 }
 
 void GameEngine::abordGame()
