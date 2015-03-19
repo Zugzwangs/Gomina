@@ -17,7 +17,8 @@ class Player : public QObject
 
 public:
     explicit Player(QObject *parent = 0);
-    virtual void init(Location Loc) = 0;
+    virtual void init() = 0;
+    void loadProfil(QString profilFile);
     ~Player();
 
     enum Location { Gui = 0, Network = 1, Brain = 2 };
@@ -26,20 +27,22 @@ public:
 
     void setName(QString _name);
     void setAvatar(QString _avatar);
+    int getRank();
     void setStatus(Status _stat);
+    void setElo(int val);
     void setRole(Side _side);
+    void setLoc(Location _loc);
 
 private:
     QString name;
     QString avatar;
-    int rank;
     int elo;
     Status stat;
     Location playFrom;
     Side role;
 
 signals:
-    void loaded();
+    void profilLoaded();
 
 };
 

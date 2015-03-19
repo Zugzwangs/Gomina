@@ -3,3 +3,6 @@ http://jeudego.org/edit/
 http://arras.jeudego.org/?page_id=252
 http://panda-glgo.softonic.fr/mac
 http://www.cnrs.fr/insis/recherche/faits-marquants/2007/crazystone.htm
+
+# comment calculer le classement elo, le rang et l'handicap des joueurs
+http://ffg.jeudego.org/echelle/echelle_algo.php
