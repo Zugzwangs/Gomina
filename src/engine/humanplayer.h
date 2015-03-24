@@ -15,7 +15,11 @@ class humanplayer : public Player
 public:
     explicit humanplayer(QObject *parent = 0);
     ~humanplayer();
-    virtual void init();
+
+    void init();
+    void loadProfil(QString profilFile);
+    void exportProfil();
+
 };
 
 #endif // HUMANPLAYER_H

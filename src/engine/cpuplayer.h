@@ -16,9 +16,10 @@ public:
     explicit CpuPlayer(QObject *parent = 0);
     ~CpuPlayer();
 
-signals:
+    void init();
+    void loadProfil(QString profilFile);
+    void exportProfil();
 
-public slots:
 };
 
 #endif // CPUPLAYER_H

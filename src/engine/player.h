@@ -16,22 +16,26 @@ class Player : public QObject
     Q_ENUMS(Side)
 
 public:
-    explicit Player(QObject *parent = 0);
-    virtual void init() = 0;
-    void loadProfil(QString profilFile);
-    ~Player();
-
     enum Location { Gui = 0, Network = 1, Brain = 2 };
     enum Status { Active = 0, Defend = 1, Spectate = 2, Wait = 3 };
     enum Side { Black = 0, White = 1, NoSide = 2 };
 
+public:
+    Player(QObject *parent = 0);
+    ~Player();
+
+    virtual void init() = 0;
+    virtual void loadProfil(QString profilFile);
+    virtual void exportProfil();
+
     void setName(QString _name);
     void setAvatar(QString _avatar);
-    int getRank();
-    void setStatus(Status _stat);
     void setElo(int val);
-    void setRole(Side _side);
+    int getRank();
+
     void setLoc(Location _loc);
+    void setStatus(Status _stat);
+    void setSide(Side _side);
 
 private:
     QString name;
@@ -39,10 +43,12 @@ private:
     int elo;
     Status stat;
     Location playFrom;
-    Side role;
+    Side camp;
 
 signals:
     void profilLoaded();
+    void statusChanged(Status st);
+    void profilChanged(QString);
 
 };
 

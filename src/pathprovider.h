@@ -9,8 +9,10 @@
 
 class PathProvider
 {
+
 public:
     PathProvider();
+    bool bootApp();
     ~PathProvider();
 };
 

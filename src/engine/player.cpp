@@ -11,18 +11,9 @@ Player::Player(QObject *parent) : QObject(parent)
 
 }
 
-//set or reset profil to consistant empty profil
-Player::init()
-{
-
-}
-
-void Player::loadProfil(QString profilFile)
-{
-// check if file exist and read it
-// set this with values
-emit profilLoaded();
-}
+// void Player::init() {}
+// void Player::loadProfil(QString profilFile) {}
+// void Player::exportProfil() {}
 
 void Player::setName(QString _name)
 {
@@ -34,14 +25,19 @@ void Player::setAvatar(QString _avatar)
     this->avatar = _avatar;
 }
 
-int Player::getRank()
-{
-    return(elo);
-}
-
 void Player::setElo(int val)
 {
-    this->elo = qFloor(val/100);
+    this->elo = val;
+}
+
+int Player::getRank()
+{
+    return( (int)floor(elo/100.0) );
+}
+
+void Player::setLoc(Location _loc)
+{
+    playFrom = _loc;
 }
 
 void Player::setStatus(Status _stat)
@@ -49,14 +45,9 @@ void Player::setStatus(Status _stat)
     stat = _stat;
 }
 
-void Player::setRole(Side _side)
+void Player::setSide(Side _side)
 {
-    role = _side;
-}
-
-void Player::setLoc(Location _loc)
-{
-
+    camp = _side;
 }
 
 Player::~Player()
