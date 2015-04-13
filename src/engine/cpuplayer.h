@@ -18,7 +18,7 @@ public:
 
     void init();
     void loadProfil(QString profilFile);
-    void exportProfil();
+    void exportProfil(QString profilFile);
 
 };
 

@@ -80,6 +80,7 @@ void GameEngine::startGame()
             break;
 
         case Free:
+
             break;
 
         case Solo:
