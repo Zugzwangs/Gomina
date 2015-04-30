@@ -1,0 +1,4 @@
+mettre en forme les spec, la road map, la conception, la doc technique
+
+
+centraliser la Todo list et la prise de notes ici
