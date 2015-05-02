@@ -3982,7 +3982,9 @@ debug\obj\player.obj: ..\src\engine\player.cpp ..\src\engine\player.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qvarlengtharray.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qcontainerfwd.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qisenum.h \
-		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobject_impl.h
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qobject_impl.h \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QtMath \
+		C:\Qt\5.4\msvc2010_opengl\include\QtCore\qmath.h
 
 debug\obj\gamearbiter.obj: ..\src\engine\gamearbiter.cpp ..\src\engine\gamearbiter.h \
 		C:\Qt\5.4\msvc2010_opengl\include\QtCore\QObject \

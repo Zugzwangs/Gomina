@@ -10,7 +10,7 @@ CpuPlayer::CpuPlayer(QObject *parent) : Player(parent)
     init();
 }
 
-void humanplayer::init()
+void CpuPlayer::init()
 {
     setName("cpu player");
     setAvatar("avatar_bot.png");
@@ -20,14 +20,14 @@ void humanplayer::init()
     setSide(NoSide);
 }
 
-void humanplayer::loadProfil(QString profilFile)
+void CpuPlayer::loadProfil(QString profilFile)
 {
     // check if file exist and read it
     // set this with values
     emit profilLoaded();
 }
 
-void humanplayer::exportProfil()
+void CpuPlayer::exportProfil()
 {
     // no needed maybe useful for bot crafting?
 }

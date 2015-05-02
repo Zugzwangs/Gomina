@@ -11,9 +11,8 @@ Player::Player(QObject *parent) : QObject(parent)
 
 }
 
-// void Player::init() {}
-// void Player::loadProfil(QString profilFile) {}
-// void Player::exportProfil() {}
+void Player::loadProfil(QString profilFile) {}
+void Player::exportProfil() {}
 
 void Player::setName(QString _name)
 {

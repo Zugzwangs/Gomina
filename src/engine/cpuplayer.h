@@ -16,9 +16,9 @@ public:
     explicit CpuPlayer(QObject *parent = 0);
     ~CpuPlayer();
 
-    void init();
-    void loadProfil(QString profilFile);
-    void exportProfil();
+    virtual void init();
+    virtual void loadProfil(QString profilFile);
+    virtual void exportProfil();
 
 };
 
