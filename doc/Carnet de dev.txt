@@ -4,3 +4,8 @@ mettre en forme les spec, la road map, la conception, la doc technique
 centraliser la Todo list et la prise de notes ici
 
 j'ai pas mal de papier dans mon dosier Université qui sont intéressants
+
+la mode est de faire un installeur qui permet un deploiment en mode portable de l'appli en plus de l'installation normale !
+C'est pas con et en plus ca permet de distribuer sur les plateformes d'appli portable.w
+
+ 

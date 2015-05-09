@@ -2,15 +2,13 @@
 //
 //
 /*******************************************************/
-
 #include "pathprovider.h"
-#include <QDir>
 #include <QDebug>
 
 //define static member
-QString PathProvider::applicationFolder = "";
-QString PathProvider::playerFolder = "";
-QString PathProvider:: gamesFolder = "";
+QDir PathProvider::applicationFolder = QDir();
+QDir PathProvider::playerFolder = QDir();
+QDir PathProvider:: gamesFolder = QDir();
 
 PathProvider::PathProvider() {}
 
@@ -25,8 +23,38 @@ bool PathProvider::bootApp()
     // load some options ?
 
     qDebug() << "starting boot checking !";
-    applicationFolder = QApplication::applicationDirPath();
-    qDebug() << "application folder is " << applicationFolder;
+    applicationFolder.setPath(QApplication::applicationDirPath());
+    qDebug() << "application folder is " << applicationFolder.absolutePath();
+
+    // check if data folders exist
+    playerFolder.setPath( applicationFolder.absolutePath());
+    gamesFolder.setPath( applicationFolder.absolutePath());
+
+    playerFolder.cdUp();
+    if (playerFolder.exists("data/profils"))
+        {
+        playerFolder.cd("data/profils");
+        environmentReady = true;
+        qDebug() << "profils folder found and is " << playerFolder.absolutePath();
+        }
+    else
+        {
+        // recover procedure ? and if so set envReady to true ?
+        environmentReady = false;
+        }
+
+    gamesFolder.cdUp();
+    if (gamesFolder.exists("data/games"))
+        {
+        gamesFolder.cd("data/games");
+        environmentReady = true;
+        qDebug() << "games folder found and is " << gamesFolder.absolutePath();
+        }
+    else
+        {
+        // recover procedure ? and if so set envReady to true ?
+        environmentReady = false;
+        }
 
     qDebug() << "boot checking finish!";
 
@@ -42,12 +70,20 @@ bool PathProvider::bootApp()
         }
 }
 
-// return path to the players folder or an empty string
-// if it doesn't exist
-// TODO check if folder still exist when it required
+// return path to the players folder or an empty string if it doesn't exist
 QString PathProvider::getPlayerFolder()
 {
-    return playerFolder;
+    return playerFolder.absolutePath();
+}
+
+QString PathProvider::getBinFolder()
+{
+    return applicationFolder.absolutePath();
+}
+
+QString PathProvider::getGamesFolder()
+{
+    return gamesFolder.absolutePath();
 }
 
 PathProvider::~PathProvider()
