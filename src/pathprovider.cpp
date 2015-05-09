@@ -13,18 +13,18 @@ PathProvider::PathProvider() {}
 // check if all mandatory ressources are availiable
 bool PathProvider::bootApp()
 {
-    bool environmentReady;
+    bool environmentReady = false;
     QString issueDescriptor;
     // init file ?
     // folder ? init them
-    // db ? theme ? ico ? etc...
+    // db ? theme ? ico ? etc...qDebug
     // load some options ?
 
-    qdebug() << "starting boot checking !";
+    qDebug() << "starting boot checking !";
     applicationFolder = QApplication::applicationDirPath();
-    qdebug() << "application folder is " << applicationFolder;
+    qDebug() << "application folder is " << applicationFolder;
 
-    qdebug() << "boot checking finish!";
+    qDebug() << "boot checking finish!";
 
     if ( environmentReady )
         {

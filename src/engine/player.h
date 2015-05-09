@@ -25,8 +25,8 @@ public:
     ~Player();
 
     virtual void init() = 0;
-    virtual void loadProfil(QString profilFile);
-    virtual void exportProfil(QString profilFile);
+    virtual void loadProfil(QString profilFile) = 0;
+    virtual void exportProfil(QString profilFile) = 0;
 
     void setName(QString _name);
     void setAvatar(QString _avatar);

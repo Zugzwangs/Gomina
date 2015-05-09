@@ -27,7 +27,7 @@ void CpuPlayer::loadProfil(QString profilFile)
     emit profilLoaded();
 }
 
-void humanplayer::exportProfil(QString profilFile)
+void CpuPlayer::exportProfil(QString profilFile)
 {
     // no needed maybe useful for bot crafting?
 }

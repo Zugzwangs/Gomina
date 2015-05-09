@@ -22,6 +22,7 @@ private:
     static QString applicationFolder;
     static QString playerFolder;
     static QString gamesFolder;
+
 };
 
 #endif // PATHPROVIDER_H
