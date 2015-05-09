@@ -16,9 +16,9 @@ public:
     explicit humanplayer(QObject *parent = 0);
     ~humanplayer();
 
-    virtual void init();
-    virtual void loadProfil(QString profilFile);
-    virtual void exportProfil();
+    void init();
+    void loadProfil(QString profilFile);
+    void exportProfil(QString profilFile);
 
 };
 

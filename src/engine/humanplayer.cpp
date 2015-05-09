@@ -12,6 +12,7 @@ humanplayer::humanplayer(QObject *parent) : Player(parent)
 
 void humanplayer::init()
 {
+    // minimal state of a huma player instance.
     setName("Unnamed Player");
     setAvatar("avatar.png");
     setElo(1000);
@@ -20,14 +21,28 @@ void humanplayer::init()
     setSide(NoSide);
 }
 
+// go to the file 'profileFile' located into the local 'player' or 'data' folder
+// and load data from it (xml)
 void humanplayer::loadProfil(QString profilFile)
 {
     // check if file exist and read it
-    // set this with values
+    if ( false )
+        {
+        //set this with values
+        }
+    else
+        {
+        // set a default profile
+        setName("Unnamed Player");
+        setAvatar("avatar.png");
+        setElo(1000);
+        }
     emit profilLoaded();
 }
 
-void humanplayer::exportProfil()
+// write player data from this instance
+// to profilFile (.xml)
+void humanplayer::exportProfil(QString profilFile)
 {
 
 }

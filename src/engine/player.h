@@ -26,7 +26,7 @@ public:
 
     virtual void init() = 0;
     virtual void loadProfil(QString profilFile);
-    virtual void exportProfil();
+    virtual void exportProfil(QString profilFile);
 
     void setName(QString _name);
     void setAvatar(QString _avatar);
