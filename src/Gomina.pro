@@ -27,6 +27,8 @@ RCC_DIR = $${MODE_PWD}/rcc
 
 # All input files
 SOURCES +=  main.cpp \
+            pathprovider.cpp \
+            logmanager.cpp \
             gui/mainwindow.cpp \
             gui/gobanview.cpp \
             gui/gobanscene.cpp \
@@ -39,6 +41,7 @@ SOURCES +=  main.cpp \
             gui/playerhud.cpp \
             gui/historicalhud.cpp \
             gui/chatwindow.cpp \
+            gui/dialogfindplayer.cpp \
             engine/blitz.cpp \
             engine/cpuplayer.cpp \
             engine/humanplayer.cpp \
@@ -47,14 +50,13 @@ SOURCES +=  main.cpp \
             engine/gameengine.cpp \
             engine/gamehistory.cpp \
             engine/goban.cpp \
+            engine/gobandiff.cpp \
             brain/test_call_cuda.cpp \
-            network/networkcenter.cpp \
-            pathprovider.cpp \
-            logmanager.cpp \
-            gui/dialogfindplayer.cpp \
-    engine/gobandiff.cpp
+            network/networkcenter.cpp
 
-HEADERS +=  gui/mainwindow.h \
+HEADERS +=  pathprovider.h \
+            logmanager.h \
+            gui/mainwindow.h \
             gui/gobanview.h \
             gui/gobanscene.h \
             gui/optionsdialog.h \
@@ -66,6 +68,7 @@ HEADERS +=  gui/mainwindow.h \
             gui/playerhud.h \
             gui/historicalhud.h \
             gui/chatwindow.h \
+            gui/dialogfindplayer.h \
             engine/blitz.h \
             engine/cpuplayer.h \
             engine/humanplayer.h \
@@ -74,12 +77,9 @@ HEADERS +=  gui/mainwindow.h \
             engine/gameengine.h \
             engine/gamehistory.h \
             engine/goban.h \
+            engine/gobandiff.h \
             brain/test_call_cuda.h \
-            network/networkcenter.h \
-            pathprovider.h \
-            logmanager.h \
-            gui/dialogfindplayer.h \
-    engine/gobandiff.h
+            network/networkcenter.h
 
 FORMS   +=  gui/mainwindow.ui \
             gui/optionsdialog.ui \

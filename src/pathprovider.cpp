@@ -7,6 +7,10 @@
 #include <QDir>
 #include <QDebug>
 
+//define static member
+QString PathProvider::applicationFolder = "";
+QString PathProvider::playerFolder = "";
+QString PathProvider:: gamesFolder = "";
 
 PathProvider::PathProvider() {}
 
