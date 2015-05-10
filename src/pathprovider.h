@@ -6,6 +6,7 @@
 #define PATHPROVIDER_H
 
 #include <QDir>
+#include <QFile>
 #include <QApplication>
 
 class PathProvider
@@ -18,15 +19,18 @@ public:
     // check environment
     static bool bootApp();
 
-    // convenient methodes to provide paths
+    // convenient methodes to provide common paths
     static QString getPlayerFolder();
     static QString getBinFolder();
     static QString getGamesFolder();
+    static QString getPicsFolder();
 
 private:
-    static QDir applicationFolder;
+    static QDir binFolder;
     static QDir playerFolder;
     static QDir gamesFolder;
+    static QDir picsFolder;
+    //static string ou qfile vers la cfg ?
 
 };
 
