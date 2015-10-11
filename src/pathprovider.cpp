@@ -9,6 +9,7 @@
 QDir PathProvider::binFolder = QDir();
 QDir PathProvider::playerFolder = QDir();
 QDir PathProvider:: gamesFolder = QDir();
+QDir PathProvider::picsFolder = QDir();
 
 PathProvider::PathProvider() {}
 
