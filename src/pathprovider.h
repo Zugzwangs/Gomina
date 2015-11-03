@@ -16,7 +16,7 @@ public:
     PathProvider();
     ~PathProvider();
 
-    // check environment
+    // check environment at startup
     static bool bootApp();
 
     // convenient methodes to provide common paths

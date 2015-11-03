@@ -1,4 +1,7 @@
 22:45:34: Running steps for project Gomina...
+
+hjgfcxdgx
+
 22:45:34: Configuration unchanged, skipping qmake step.
 22:45:35: Starting: "C:\Qt\Tools\QtCreator\bin\jom.exe" 
 	C:\Qt\Tools\QtCreator\bin\jom.exe -f Makefile.Debug

@@ -1,4 +1,4 @@
-/*******************************************************/
+﻿/*******************************************************/
 //
 //
 /*******************************************************/
@@ -37,7 +37,7 @@ public:
     QPointF coord2Pos(QPoint p);
 
 protected:
-    virtual void ​hoverEnterEvent(QGraphicsSceneHoverEvent* event);
+    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent* event);
     virtual void hoverMoveEvent(QGraphicsSceneHoverEvent* event);
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent* event);
 

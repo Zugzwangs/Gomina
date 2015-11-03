@@ -40,14 +40,6 @@ GraphicsGobanItem::GraphicsGobanItem(int _gobanSize, QGraphicsItem* parent) : QG
 
 GraphicsGobanItem::~GraphicsGobanItem() {}
 
-// convert a game position to coord in Goban coord
-QPointF GraphicsGobanItem::coord2Pos(QPoint p)
-{
-    float _x_pos = GOBAN_BORDER_THICKNESS + (p.x()-1)*(GOBAN_STEP_SIZE_WIDTH+GOBAN_LINE_THICKNESS) + GOBAN_LINE_THICKNESS/2;
-    float _y_pos = GOBAN_BORDER_THICKNESS + (p.y()-1)*(GOBAN_STEP_SIZE_HEIGHT+GOBAN_LINE_THICKNESS)+ GOBAN_LINE_THICKNESS/2;;
-    return QPointF(_x_pos, _y_pos);
-}
-
 // build all items composing the board
 void GraphicsGobanItem::buildGoban(int _gobanSize)
 {
@@ -208,7 +200,7 @@ QPointF curPos = coord2Pos( QPoint(n, n) );
 }
 
 // Event Handlers
-void GraphicsGobanItem::​hoverEnterEvent(QGraphicsSceneHoverEvent* event)
+void GraphicsGobanItem::hoverEnterEvent(QGraphicsSceneHoverEvent* event)
 {
     qDebug() << "GraphicsGobanItem::​hoverEnterEvent()";
     //event->ignore();
@@ -225,7 +217,15 @@ void GraphicsGobanItem::hoverLeaveEvent(QGraphicsSceneHoverEvent* event)
     qDebug() << "GraphicsGobanItem::hoverLeaveEvent()";
 }
 
-// Custom Slots
+// convert a game position to coord in Goban coord
+QPointF GraphicsGobanItem::coord2Pos(QPoint p)
+{
+    float _x_pos = GOBAN_BORDER_THICKNESS + (p.x()-1)*(GOBAN_STEP_SIZE_WIDTH+GOBAN_LINE_THICKNESS) + GOBAN_LINE_THICKNESS/2;
+    float _y_pos = GOBAN_BORDER_THICKNESS + (p.y()-1)*(GOBAN_STEP_SIZE_HEIGHT+GOBAN_LINE_THICKNESS)+ GOBAN_LINE_THICKNESS/2;;
+    return QPointF(_x_pos, _y_pos);
+}
+
+// Slot that wait for stone played : create the item
 void GraphicsGobanItem::playOnCase(QPoint p, int camp)
 {
     GraphicStoneITem* crtStone = new GraphicStoneITem(1, this);

@@ -8,7 +8,8 @@
 //define static member
 QDir PathProvider::binFolder = QDir();
 QDir PathProvider::playerFolder = QDir();
-QDir PathProvider:: gamesFolder = QDir();
+QDir PathProvider::gamesFolder = QDir();
+QDir PathProvider::picsFolder = QDir();
 
 PathProvider::PathProvider() {}
 
@@ -22,15 +23,17 @@ bool PathProvider::bootApp()
     qDebug() << "application folder is " << binFolder.absolutePath();
 
     // CHECK CFG FILE
-    if ( binFolder.exists("gomina.cfg") )
+    if ( binFolder.exists("gomina_cfg.ini") )
         {
         // checker si le fichier est accessible en lecture/ecriture
         // et contient le minimum correct pour que l'appli tourne
+        qDebug() << "configuration file found.   [OK]";
         environmentReady = true;
         }
     else
         {
         //créer le fichier si possible sinon
+        qDebug() << "configuration file is missing. [WARNING]";
         //  TODO
         // QFile cfgFile;
         // cfgFile.open(QIODevice::ReadWrite);
@@ -38,8 +41,9 @@ bool PathProvider::bootApp()
         }
 
     // CHECK DATA FOLDER AND SUBFOLDERS
-    playerFolder.setPath( binFolder.absolutePath());
-    gamesFolder.setPath( binFolder.absolutePath());
+    playerFolder.setPath( binFolder.absolutePath() );
+    gamesFolder.setPath( binFolder.absolutePath() );
+    picsFolder.setPath( binFolder.absolutePath() );
 
     playerFolder.cdUp();
     if (playerFolder.exists("data/profils"))
@@ -51,6 +55,19 @@ bool PathProvider::bootApp()
     else
         {
         // recover procedure ? and if so set envReady to true ?
+        environmentReady = false;
+        }
+
+    picsFolder.cdUp();
+    if (picsFolder.exists("data/pics"))
+        {
+        picsFolder.cd("data/pics");
+        environmentReady = true;
+        qDebug() << "pics folder found and is " << picsFolder.absolutePath();
+        }
+    else
+        {
+        //
         environmentReady = false;
         }
 

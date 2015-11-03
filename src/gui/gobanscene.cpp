@@ -24,7 +24,7 @@ GraphicsGobanItem* GobanScene::createGoban(int gobanSize)
     addItem(gobanItem);
 
     // gives space around goban
-    QRectF totalSceneRect = sceneRect() + QMarginsF(40, 40, 40, 40);
+    QRectF totalSceneRect = sceneRect() + QMarginsF(30, 30, 30, 30);
     addRect(totalSceneRect, QPen(Qt::NoPen), QBrush(Qt::NoBrush));
     return gobanItem;
 }

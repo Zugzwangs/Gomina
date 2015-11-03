@@ -39,6 +39,8 @@ private:
 
     GameEngine* Gomenige;
 
+    QString lastDir;
+
 };
 
 #endif // MAINWINDOW_H

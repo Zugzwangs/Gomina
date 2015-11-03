@@ -2,7 +2,6 @@
 //
 //
 /*******************************************************/
-
 #include <QFileDialog>
 #include <QDebug>
 
@@ -11,12 +10,14 @@
 #include "optionsdialog.h"
 #include "aboutwindow.h"
 #include "dialogfindplayer.h"
+#include "pathprovider.h"
+
 
 MainWindow::MainWindow(GameEngine *GE, QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
-    //main window settings
+    // main window settings
     this->setWindowTitle("Gomina");
     this->setMinimumSize( QSize(800, 600) );
 
@@ -24,6 +25,9 @@ MainWindow::MainWindow(GameEngine *GE, QWidget *parent) :  QMainWindow(parent), 
     goban_scene = new GobanScene(this);
     goban_item = goban_scene->createGoban(19);
     ui->goban_view->setScene(goban_scene);
+
+    // keep last directory used for saving
+    lastDir = PathProvider::getGamesFolder();
 
     // setup the HUD part
     Hud = new GameHud();
@@ -33,7 +37,7 @@ MainWindow::MainWindow(GameEngine *GE, QWidget *parent) :  QMainWindow(parent), 
     Gomenige = GE;
 
     // connect modules together
-    connect( goban_item, SIGNAL(clickOnCase(QPoint)), Gomenige, SLOT(playedOn(QPoint)) );
+    connect( goban_item, SIGNAL(clickOnCase(QPoint)), Gomenige, SLOT(playerPlay(QPoint)) );
     connect( Gomenige, SIGNAL(gobanChanged(QPoint,int)), goban_item, SLOT(playOnCase(QPoint,int)) );
 
     // connect actions from menu
@@ -55,7 +59,7 @@ void MainWindow::OpenMenuLoadGame()
 QString fileName;
 
     //use path provider here to get Last dir used
-    fileName = QFileDialog::getOpenFileName(this, tr("Load game"), "", "Game File (*.sgf)");
+    fileName = QFileDialog::getOpenFileName(this, tr("Load game"), PathProvider::getGamesFolder(), "Game File (*.sgf)");
     qDebug() << "OpenMenuLoadGame: " << fileName;
     if ( fileName.isEmpty() )
         {
@@ -67,10 +71,11 @@ QString fileName;
         }
 }
 
+
+//TODO update the lastdir path when user save a game to a differente directory
 void MainWindow::OpenMenuSaveGame()
 {
 QString fileName = "";
-QString lastDir = "";    //use path provider here to get Last dir used
 
     fileName = QFileDialog::getSaveFileName(this, tr("Save File"), lastDir, "Game Files (*.sgf)" );
     qDebug() << "OpenMenuSaveGame: " << fileName;

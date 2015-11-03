@@ -10,3 +10,6 @@ installer et test un logiciel déjà existant
 se rencarder sur l'api a offrir pour une utilisation du soft sur les serveurs de go bot
 
 export de position de partie
+
+
+du caca pour tout le monde

@@ -18,23 +18,18 @@ int main(int argc, char *argv[])
     QApplication::setOrganizationDomain("Zugzwangs@Ariadne.org");
 
     // Si l'environnement est en place
-    if ( PathProvider::bootApp() )
+    if ( !PathProvider::bootApp() )
         {
-        // On instancie les Objets principaux:
-        GameEngine* GE = new GameEngine();  // init Game Engine
-        MainWindow w(GE);                   // init main Window
-        w.show();                           // show main IHM
-        return a.exec();                    // run the main loop
-        delete GE;
+        // un probleme dans l'environnement est apparu
+        return 1;
         }
 
-    // Si l'environnement n'est pas complet
-    else
-        {
-        // on trace les soucis
+    // on instancie les objets principaux:
+    GameEngine* GE = new GameEngine();  // init Game Engine
+    MainWindow w(GE);                   // init main Window
+    w.show();                           // show main IHM
+    return a.exec();                    // run the main loop
 
-        // et on se barre
-
-        }
-
+    // clean and quit
+    delete GE;
 }

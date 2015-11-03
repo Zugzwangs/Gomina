@@ -99,11 +99,6 @@ void GameEngine::startGame()
         }
 }
 
-void GameEngine::abordGame()
-{
-
-}
-
 void GameEngine::restartGame()
 {
 
@@ -114,18 +109,32 @@ void GameEngine::loadProfile()
 
 }
 
+// one player quit, abord the game
 void GameEngine::playerQuit()
 {
-
+    abordGame();
 }
 
+// when the two players abdiques the game end
 void GameEngine::playerAbdique()
 {
 
 }
 
+void GameEngine::abordGame()
+{
+
+}
+
+// if p == nul on considère que le joueur veut en fait passer son tour
 void GameEngine::playerPlay(QPoint p)
 {
+    if (p.isNull())
+        {
+        // on ne fait que le changement de trait.
+        emit activePlayerChanged();
+        }
+
     // a player click on case p and if its valid
     if ( myGoban->getValue(p)==-1 )
         {
@@ -139,14 +148,28 @@ void GameEngine::playerPlay(QPoint p)
 
 void GameEngine::backTrackPlay()
 {
-    //if backtrack is possible do and emit changes
-    emit gobanChanged(QPoint(0, 0), 0);
-    emit activePlayerChanged();
+    // first check if backtrack is allowed (mode  de jeu ?)
+    if (GameMode == Free or GameMode == Solo)
+        {
+        // then ask GameHistory for previous game position
+        // appliquer les changements
+        // signaler les changements effectués
+        emit gobanChanged(QPoint(0, 0), 0);
+        emit activePlayerChanged();
+        }
+
+}
+
+// procedure de cloture de fin de partie.
+void GameEngine::endGame()
+{
+
 }
 
 void GameEngine::savePosition()
 {
     // delegate save to the import/export object
+
 }
 
 void GameEngine::loadPosition()

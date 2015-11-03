@@ -40,6 +40,7 @@ public slots:
     void savePosition();
     void loadPosition();
     void changeGameMod();
+    void endGame();
 
 private slots:
     void setGameMode(Mode mode);

@@ -36,9 +36,9 @@ void graphicsHitboxItem::initialisation()
     setFlag( QGraphicsItem::ItemIsSelectable, false);
 }
 
-void graphicsHitboxItem::​hoverEnterEvent(QGraphicsSceneHoverEvent* event)
+void graphicsHitboxItem::hoverEnterEvent(QGraphicsSceneHoverEvent* event)
 {
-    qDebug() << "graphicsHitboxItem::​hoverEnterEvent()";
+    qDebug() << "graphicsHitboxItem::hoverEnterEvent()";
     setBrush( QBrush(Qt::blue) );
     QGraphicsRectItem::hoverEnterEvent(event);
 }
@@ -57,12 +57,19 @@ void graphicsHitboxItem::hoverLeaveEvent(QGraphicsSceneHoverEvent* event)
 
 void graphicsHitboxItem::mousePressEvent(QGraphicsSceneMouseEvent * event)
 {
-    Q_UNUSED(event);
-    qDebug() << "MOUSE PRESS EVENT ON HITBOX";
-    qDebug() << "HitBoxItemPos x=" << this->pos().x() << " y=" << this->pos().y();
-    qDebug() << "HitBoxItemScenePos x=" << this->scenePos().x() << " y=" << this->scenePos().y();
-    qDebug() << "GamePos is x=" << GamePos.x() << " y=" << GamePos.y();
-    emit clicked(GamePos);
+    if (event->button() == Qt::LeftButton)
+        {
+        event->accept();
+        qDebug() << "MOUSE PRESS EVENT ON HITBOX";
+        qDebug() << "HitBoxItemPos x=" << this->pos().x() << " y=" << this->pos().y();
+        qDebug() << "HitBoxItemScenePos x=" << this->scenePos().x() << " y=" << this->scenePos().y();
+        qDebug() << "GamePos is x=" << GamePos.x() << " y=" << GamePos.y();
+        emit clicked(GamePos);
+        }
+    else
+        {
+        event->ignore();
+        }
 }
 
 void graphicsHitboxItem::setGamePos(QPoint p)
