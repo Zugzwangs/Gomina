@@ -1,0 +1,38 @@
+// ///////////////////////////
+//partie GLOBALE
+// ///////////////////////////
+
+#Main:
+
+#Class PathManager:
+* ajouter un membre vers le dossier principal de l'appli ?
+
+#Class LogManager:
+* rendre statique le plus de choses possible dans la classe
+* rendre la classe logmanager singleton et/ou static notamment la methode appendMessage()
+* renommer appendMessage() en writeMessage() ?
+* comment obtenir la propriété thread safe ?
+
+#Class ConfManager:
+
+
+Une fois ces classes utilitaires faites on pourra passer à la suite !
+
+
+// ///////////////////////////
+// partir IHM
+// ///////////////////////////
+
+
+// ///////////////////////////
+//partie ENGINE:
+// ///////////////////////////
+réaliser la modélisation en automate fini du moteur de jeu.
+mode de jeu // état de la partie ...
+
+
+// ///////////////////////////
+//partie BRAIN
+// ///////////////////////////
+Réunir de la Doc sur openCL bordel
+Commencer la conception sur papier. Quel découpage en thread faire pour l'IA

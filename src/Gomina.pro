@@ -27,8 +27,9 @@ RCC_DIR = $${MODE_PWD}/rcc
 
 # All input files
 SOURCES +=  main.cpp \
-            pathprovider.cpp \
             logmanager.cpp \
+            confmanager.cpp \
+            pathmanager.cpp \
             gui/mainwindow.cpp \
             gui/gobanview.cpp \
             gui/gobanscene.cpp \
@@ -54,7 +55,8 @@ SOURCES +=  main.cpp \
             brain/test_call_cuda.cpp \
             network/networkcenter.cpp
 
-HEADERS +=  pathprovider.h \
+HEADERS +=  confmanager.h \
+            pathmanager.h \
             logmanager.h \
             gui/mainwindow.h \
             gui/gobanview.h \
@@ -97,6 +99,9 @@ OTHER_FILES += "Road map.txt" \
 RESOURCES += res.qrc \
 
 RC_FILE = logo_link.rc
+
+DISTFILES += \
+    TODO_LIST.txt
 
 #--------------------------------------------------
 # CUDA custom step
@@ -153,4 +158,3 @@ RC_FILE = logo_link.rc
 # custom deployment step
 #--------------------------------------------------
 # ??
-

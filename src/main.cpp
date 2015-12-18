@@ -3,33 +3,57 @@
 //
 /*******************************************************/
 #include <QApplication>
+#include <QDebug>
 
-#include "pathprovider.h"
+#include "pathmanager.h"
+#include "logmanager.h"
+#include "confmanager.h"
 #include "gui/mainwindow.h"
 
 int main(int argc, char *argv[])
 {
-    // On instancie l'application qt
+    //on instancie l'application qt
     QApplication a(argc, argv);
 
-    // Settings généraux
+    //settings généraux
     QApplication::setApplicationName("Gomina");
     QApplication::setOrganizationName("Zugzwang Software");
     QApplication::setOrganizationDomain("Zugzwangs@Ariadne.org");
 
-    // Si l'environnement est en place
-    if ( !PathProvider::bootApp() )
+    //initialisation des services globaux ( Path >> Logs >> Config )
+    if ( !PathManager::init() )
         {
-        // un probleme dans l'environnement est apparu
+        qDebug() << "Un ou des dossiers de l'application sont manquant(s). ";
+        qDebug() << "L'application ne peux pas démarrer. ";
         return 1;
         }
+    else
+        qDebug() << "initialisation du PathManager ok.";
 
-    // on instancie les objets principaux:
+    if ( !LogManager::init(PathManager::getPathLogsFolder()) )
+        {
+        qDebug() << "L'initialisation de la journalisation à échouée.";
+        qDebug() << "L'application ne peux pas démarrer. ";
+        return 1;
+        }
+    else
+        qDebug() << "initialisation du LogManager ok.";
+
+    if ( !confManager::init() )
+        {
+        qDebug() << "L'initialisation du fichier de configuration à échouée.";
+        qDebug() << "L'application ne peux pas démarrer. ";
+        return 1;
+        }
+    else
+        qDebug() << "initialisation du ConfManager ok.";
+
+    //on instancie les objets principaux:
     GameEngine* GE = new GameEngine();  // init Game Engine
     MainWindow w(GE);                   // init main Window
     w.show();                           // show main IHM
     return a.exec();                    // run the main loop
 
-    // clean and quit
+    //clean and quit
     delete GE;
 }

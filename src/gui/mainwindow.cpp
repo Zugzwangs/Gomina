@@ -10,7 +10,7 @@
 #include "optionsdialog.h"
 #include "aboutwindow.h"
 #include "dialogfindplayer.h"
-#include "pathprovider.h"
+#include "pathmanager.h"
 
 
 MainWindow::MainWindow(GameEngine *GE, QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainWindow)
@@ -27,7 +27,7 @@ MainWindow::MainWindow(GameEngine *GE, QWidget *parent) :  QMainWindow(parent), 
     ui->goban_view->setScene(goban_scene);
 
     // keep last directory used for saving
-    lastDir = PathProvider::getGamesFolder();
+    lastDir = PathManager::getPathGamesFolder();
 
     // setup the HUD part
     Hud = new GameHud();
@@ -59,7 +59,7 @@ void MainWindow::OpenMenuLoadGame()
 QString fileName;
 
     //use path provider here to get Last dir used
-    fileName = QFileDialog::getOpenFileName(this, tr("Load game"), PathProvider::getGamesFolder(), "Game File (*.sgf)");
+    fileName = QFileDialog::getOpenFileName(this, tr("Load game"), PathManager::getPathGamesFolder(), "Game File (*.sgf)");
     qDebug() << "OpenMenuLoadGame: " << fileName;
     if ( fileName.isEmpty() )
         {
