@@ -15,12 +15,12 @@ int main(int argc, char *argv[])
     //on instancie l'application qt
     QApplication a(argc, argv);
 
-    //settings généraux
+    //settings généraux pour la gestion des settings
     QApplication::setApplicationName("Gomina");
     QApplication::setOrganizationName("Zugzwang Software");
     QApplication::setOrganizationDomain("Zugzwangs@Ariadne.org");
 
-    //initialisation des services globaux ( Path >> Logs >> Config )
+    //initialisation des services ( Path -> Logs -> Config )
     if ( !PathManager::init() )
         {
         qDebug() << "Un ou des dossiers de l'application sont manquant(s). ";
@@ -37,16 +37,16 @@ int main(int argc, char *argv[])
         return 1;
         }
     else
-        qDebug() << "initialisation du LogManager ok.";
+        qCWarning(general()) << "initialisation du LogManager ok.";
 
     if ( !confManager::init() )
         {
-        qDebug() << "L'initialisation du fichier de configuration à échouée.";
-        qDebug() << "L'application ne peux pas démarrer. ";
+        qCDebug(general()) << "L'initialisation du fichier de configuration à échouée.";
+        qCDebug(general()) << "L'application ne peux pas démarrer.";
         return 1;
         }
     else
-        qDebug() << "initialisation du ConfManager ok.";
+        qCWarning(general()) << "initialisation du ConfManager ok.";
 
     //on instancie les objets principaux:
     GameEngine* GE = new GameEngine();  // init Game Engine
@@ -56,4 +56,5 @@ int main(int argc, char *argv[])
 
     //clean and quit
     delete GE;
+    LogManager::release(); //last thing to do
 }

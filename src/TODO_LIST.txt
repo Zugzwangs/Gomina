@@ -8,15 +8,17 @@
 * ajouter un membre vers le dossier principal de l'appli ?
 
 #Class LogManager:
-* rendre statique le plus de choses possible dans la classe
-* rendre la classe logmanager singleton et/ou static notamment la methode appendMessage()
-* renommer appendMessage() en writeMessage() ?
-* comment obtenir la propriété thread safe ?
+* rendre gominaMsgHandler() thread safe.
+* utiliser qSetMessagePattern("%{category} %{message}"); dans mon messageHandler custom pour formater les lignes de logs
+* optimiser les performances ?!
+* ajouter d'autres catégories et journaux de logs pour chaque modules de l'appli.
+* configurer explicitement pour chaque catégorie de logs, la politique pour chaque type de trace
+ |(message, debug, warning, fatal).(I;E; Quel niveau de trace on veut module par module.
+*
+
 
 #Class ConfManager:
-
-
-Une fois ces classes utilitaires faites on pourra passer à la suite !
+* definir l'architecture de synchronisation des données entre la cfg.ini/IHM/
 
 
 // ///////////////////////////

@@ -2227,7 +2227,7 @@ debug/obj/main.o: ../src/main.cpp C:/Qt/5.4/mingw491_32/include/QtWidgets/QAppli
 		C:/Qt/5.4/mingw491_32/include/QtCore/QFile \
 		C:/Qt/5.4/mingw491_32/include/QtCore/QString \
 		../src/logmanager.h \
-		C:/Qt/5.4/mingw491_32/include/QtCore/qqueue.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/QTextStream \
 		../src/confmanager.h \
 		../src/gui/mainwindow.h \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/QMainWindow \
@@ -2267,9 +2267,10 @@ debug/obj/main.o: ../src/main.cpp C:/Qt/5.4/mingw491_32/include/QtWidgets/QAppli
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\obj\main.o ..\src\main.cpp
 
 debug/obj/logmanager.o: ../src/logmanager.cpp ../src/logmanager.h \
-		C:/Qt/5.4/mingw491_32/include/QtCore/qqueue.h \
-		C:/Qt/5.4/mingw491_32/include/QtCore/qlist.h \
-		C:/Qt/5.4/mingw491_32/include/QtCore/qalgorithms.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/QFile \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qfile.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qfiledevice.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qiodevice.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qglobal.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qconfig.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qfeatures.h \
@@ -2298,20 +2299,49 @@ debug/obj/logmanager.o: ../src/logmanager.cpp ../src/logmanager.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qglobalstatic.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qmutex.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qnumeric.h \
-		C:/Qt/5.4/mingw491_32/include/QtCore/qiterator.h \
-		C:/Qt/5.4/mingw491_32/include/QtCore/qrefcount.h \
-		C:/Qt/5.4/mingw491_32/include/QtCore/qarraydata.h \
-		C:/Qt/5.4/mingw491_32/include/QtCore/qbytearraylist.h \
-		C:/Qt/5.4/mingw491_32/include/QtCore/qbytearray.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qobject.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qobjectdefs.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qnamespace.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qstring.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qchar.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qbytearray.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qrefcount.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qarraydata.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qstringbuilder.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qlist.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qalgorithms.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qiterator.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qcoreevent.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qmetatype.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qisenum.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qobject_impl.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/QTextStream \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qtextstream.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qlocale.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qvariant.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qmap.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qpair.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qdebug.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qhash.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qvector.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qpoint.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qset.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qstringlist.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qdatastream.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qregexp.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qshareddata.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/QDateTime \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qdatetime.h \
-		C:/Qt/5.4/mingw491_32/include/QtCore/qshareddata.h \
-		C:/Qt/5.4/mingw491_32/include/QtCore/qhash.h \
-		C:/Qt/5.4/mingw491_32/include/QtCore/qpair.h
+		C:/Qt/5.4/mingw491_32/include/QtCore/QDebug \
+		C:/Qt/5.4/mingw491_32/include/QtCore/QFileInfo \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qfileinfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\obj\logmanager.o ..\src\logmanager.cpp
 
 debug/obj/confmanager.o: ../src/confmanager.cpp ../src/confmanager.h
@@ -2577,11 +2607,27 @@ debug/obj/mainwindow.o: ../src/gui/mainwindow.cpp C:/Qt/5.4/mingw491_32/include/
 		../src/engine/gamearbiter.h \
 		../src/engine/gobandiff.h \
 		debug/ui/ui_mainwindow.h \
-		../src/gui/optionsdialog.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/QDialog \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/QTableWidget \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtablewidget.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtableview.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/QVariant \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QAction \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qaction.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QApplication \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qeventloop.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qguiapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qinputmethod.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QFrame \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QHBoxLayout \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qlayout.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QHeaderView \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
@@ -2595,6 +2641,19 @@ debug/obj/mainwindow.o: ../src/gui/mainwindow.cpp C:/Qt/5.4/mingw491_32/include/
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstyle.h \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QMenu \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qmenu.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QMenuBar \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qmenubar.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QStatusBar \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstatusbar.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QVBoxLayout \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QWidget \
+		../src/gui/optionsdialog.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QDialog \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QTableWidget \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtablewidget.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtableview.h \
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/QTabWidget \
 		C:/Qt/5.4/mingw491_32/include/QtGui/QStandardItemModel \
 		C:/Qt/5.4/mingw491_32/include/QtGui/qstandarditemmodel.h \
@@ -2603,13 +2662,6 @@ debug/obj/mainwindow.o: ../src/gui/mainwindow.cpp C:/Qt/5.4/mingw491_32/include/
 		../src/pathmanager.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/QDir \
 		C:/Qt/5.4/mingw491_32/include/QtCore/QFile \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/QApplication \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qapplication.h \
-		C:/Qt/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
-		C:/Qt/5.4/mingw491_32/include/QtCore/qeventloop.h \
-		C:/Qt/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.4/mingw491_32/include/QtGui/qguiapplication.h \
-		C:/Qt/5.4/mingw491_32/include/QtGui/qinputmethod.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\obj\mainwindow.o ..\src\gui\mainwindow.cpp
 
@@ -2958,7 +3010,32 @@ debug/obj/optionsdialog.o: ../src/gui/optionsdialog.cpp C:/Qt/5.4/mingw491_32/in
 		C:/Qt/5.4/mingw491_32/include/QtWidgets/QTabWidget \
 		C:/Qt/5.4/mingw491_32/include/QtGui/QStandardItemModel \
 		C:/Qt/5.4/mingw491_32/include/QtGui/qstandarditemmodel.h \
-		debug/ui/ui_optionsdialog.h
+		debug/ui/ui_optionsdialog.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/QVariant \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QAction \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qaction.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QApplication \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qeventloop.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qguiapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qinputmethod.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QDialogButtonBox \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qdialogbuttonbox.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QFrame \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QHeaderView \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QLabel \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qlabel.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QListView \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qlistview.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QSpacerItem \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QVBoxLayout \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\obj\optionsdialog.o ..\src\gui\optionsdialog.cpp
 
 debug/obj/aboutwindow.o: ../src/gui/aboutwindow.cpp ../src/gui/aboutwindow.h \
@@ -3065,7 +3142,47 @@ debug/obj/aboutwindow.o: ../src/gui/aboutwindow.cpp ../src/gui/aboutwindow.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
-		debug/ui/ui_aboutwindow.h
+		debug/ui/ui_aboutwindow.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/QVariant \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QAction \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qaction.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qicon.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QApplication \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qeventloop.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qguiapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qinputmethod.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QDialogButtonBox \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qdialogbuttonbox.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QFrame \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qframe.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QHeaderView \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qvalidator.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qregularexpression.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstyle.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QVBoxLayout \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qlayout.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qgridlayout.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\obj\aboutwindow.o ..\src\gui\aboutwindow.cpp
 
 debug/obj/gamehud.o: ../src/gui/gamehud.cpp ../src/gui/gamehud.h \
@@ -3174,7 +3291,45 @@ debug/obj/gamehud.o: ../src/gui/gamehud.cpp ../src/gui/gamehud.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
-		debug/ui/ui_gamehud.h
+		debug/ui/ui_gamehud.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/QVariant \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QAction \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qaction.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qicon.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QApplication \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qeventloop.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qguiapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qinputmethod.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QFrame \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QHeaderView \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qvalidator.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qregularexpression.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstyle.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QVBoxLayout \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qlayout.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QWidget \
+		../src/gui/playerhud.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\obj\gamehud.o ..\src\gui\gamehud.cpp
 
 debug/obj/graphicstoneitem.o: ../src/gui/graphicstoneitem.cpp ../src/gui/graphicstoneitem.h \
@@ -3575,6 +3730,45 @@ debug/obj/playerhud.o: ../src/gui/playerhud.cpp ../src/gui/playerhud.h \
 		C:/Qt/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
 		debug/ui/ui_playerhud.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/QVariant \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QAction \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qaction.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qicon.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QApplication \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qeventloop.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qguiapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qinputmethod.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QHBoxLayout \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qlayout.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qgridlayout.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QHeaderView \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qvalidator.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qregularexpression.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstyle.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QLabel \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qlabel.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QVBoxLayout \
 		C:/Qt/5.4/mingw491_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\obj\playerhud.o ..\src\gui\playerhud.cpp
 
@@ -3684,7 +3878,38 @@ debug/obj/historicalhud.o: ../src/gui/historicalhud.cpp ../src/gui/historicalhud
 		C:/Qt/5.4/mingw491_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
-		debug/ui/ui_historicalhud.h
+		debug/ui/ui_historicalhud.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/QVariant \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QAction \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qaction.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qicon.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QApplication \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qeventloop.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qguiapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qinputmethod.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QHeaderView \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qvalidator.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qregularexpression.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstyle.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\obj\historicalhud.o ..\src\gui\historicalhud.cpp
 
 debug/obj/chatwindow.o: ../src/gui/chatwindow.cpp ../src/gui/chatwindow.h \
@@ -3793,7 +4018,38 @@ debug/obj/chatwindow.o: ../src/gui/chatwindow.cpp ../src/gui/chatwindow.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
-		debug/ui/ui_chatwindow.h
+		debug/ui/ui_chatwindow.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/QVariant \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QAction \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qaction.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qicon.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QApplication \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qeventloop.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qguiapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qinputmethod.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QHeaderView \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qvalidator.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qregularexpression.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstyle.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\obj\chatwindow.o ..\src\gui\chatwindow.cpp
 
 debug/obj/dialogfindplayer.o: ../src/gui/dialogfindplayer.cpp ../src/gui/dialogfindplayer.h \
@@ -3900,7 +4156,49 @@ debug/obj/dialogfindplayer.o: ../src/gui/dialogfindplayer.cpp ../src/gui/dialogf
 		C:/Qt/5.4/mingw491_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.4/mingw491_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.4/mingw491_32/include/QtGui/qtouchdevice.h \
-		debug/ui/ui_dialogfindplayer.h
+		debug/ui/ui_dialogfindplayer.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/QVariant \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QAction \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qaction.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qicon.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QApplication \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qeventloop.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qguiapplication.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qinputmethod.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QButtonGroup \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qbuttongroup.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QDialogButtonBox \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qdialogbuttonbox.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QFrame \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qframe.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QHeaderView \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qheaderview.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.4/mingw491_32/include/QtGui/qvalidator.h \
+		C:/Qt/5.4/mingw491_32/include/QtCore/qregularexpression.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qslider.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qstyle.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QLabel \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qlabel.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/QVBoxLayout \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qboxlayout.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qlayout.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/5.4/mingw491_32/include/QtWidgets/qgridlayout.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\obj\dialogfindplayer.o ..\src\gui\dialogfindplayer.cpp
 
 debug/obj/blitz.o: ../src/engine/blitz.cpp ../src/engine/blitz.h \

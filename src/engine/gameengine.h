@@ -1,11 +1,12 @@
 /*******************************************************/
 //
-//
+//TODO: some feature to think about
+//void restartGame();
+
 /*******************************************************/
 #ifndef GAMEENGINE_H
 #define GAMEENGINE_H
 
-#include <QObject>
 #include "goban.h"
 #include "humanplayer.h"
 #include "cpuplayer.h"
@@ -25,37 +26,37 @@ public:
     ~GameEngine();
 
     enum Mode { Nomode = 0, Free = 1, Solo = 2, Local = 3, Online = 4 };
-    enum Status { Running = 0, Paused = 1, Unstable = 2 };
+    enum Status { NoStatus = 0, Running = 1, Paused = 2, Waiting = 3 };
 
 public slots:
+
+    //functions relatives to the game status
     void startGame();
-    void abordGame();
-    void restartGame();
     void togglePause();
-    void loadProfile();
+    void endGame();
     void playerQuit();
-    void playerAbdique();
+
+    //function when a game is running
     void playerPlay(QPoint p);
     void backTrackPlay();
     void savePosition();
     void loadPosition();
-    void changeGameMod();
-    void endGame();
+    void loadProfile();
 
 private slots:
     void setGameMode(Mode mode);
     void setGameStatus(Status stat);
 
 private:
+    Mode GameMode;
+    Status GameStatus;
+
     Goban* myGoban;
     GameHistory* historic;
     GameArbiter* arbiter;
     Blitz* myBlitz;
     Player* player_1;
     Player* player_2;
-
-    Mode GameMode;
-    Status GameStatus;
 
 signals:
     void gobanChanged(QPoint p, int c);

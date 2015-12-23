@@ -2,7 +2,7 @@
 //
 //
 /*******************************************************/
-#include <QDebug>
+#include <logmanager.h>
 #include "gameengine.h"
 
 GameEngine::GameEngine(QObject *parent) : QObject(parent)
@@ -10,40 +10,60 @@ GameEngine::GameEngine(QObject *parent) : QObject(parent)
     /*------------------------------------------------*/
     /*                  INIT THIS                     */
     /*------------------------------------------------*/
-    setGameMode(Nomode);      // default mode
-
-
-    /*------------------------------------------------*/
-    /*                INIT COMPONENT                  */
-    /*------------------------------------------------*/
-
-    myGoban = new Goban(this);          // build goban data structure
-
-    historic = new GameHistory(this);   // init history data structure
-
-    arbiter = new GameArbiter(this);    // init the game's rules manager
-
-    myBlitz = new Blitz(this);          // create clock TODO maybe need 2 clocks one for blitz game and other for IA
-
-    player_1 = new humanplayer(this);   // init at least first player TODO : think that first player could be a cpuplayer
-
+    qCDebug(engine()) << "Game is starting.";
+    GameMode = Nomode;      //default mode
+    GameStatus = NoStatus;  //default status
 
     /*------------------------------------------------*/
-    /*              CONNECT COMPONENT                 */
+    /*                INIT COMPONENTS                 */
     /*------------------------------------------------*/
+    myGoban = new Goban(this);          //build goban data structure
+    historic = new GameHistory(this);   //init history data structure
+    arbiter = new GameArbiter(this);    //init the game's rules manager
+    myBlitz = new Blitz(this);          //create clock TODO maybe need 2 clocks one for blitz game and other for IA
+    player_1 = new humanplayer(this);   //init at least first player TODO : think that first player could be a cpuplayer
+    player_2 = NULL;
+    qCDebug(engine()) << "components are initialised";
 
     /*------------------------------------------------*/
-    /*                CONNECT OUPUT                   */
+    /*              CONNECT COMPONENTS                */
     /*------------------------------------------------*/
+
 
     /*------------------------------------------------*/
     /*                CONNECT INPUT                   */
     /*------------------------------------------------*/
 
+
+    /*------------------------------------------------*/
+    /*                CONNECT OUPUT                   */
+    /*------------------------------------------------*/
+
 }
 
+//on profite du destructeur pour détruire toutes les variables dynamiques.
+GameEngine::~GameEngine()
+{
+    delete myGoban;
+    delete historic;
+    delete arbiter;
+    delete myBlitz;
+    delete player_1;
+    if(player_2 != NULL)
+        delete player_2;
+}
+
+/*------------------------------------------------*/
+/*             GAME ENGINE STATES                 */
+/*------------------------------------------------*/
+// we allow change game's mode only when there is no game currently running
 void GameEngine::setGameMode(Mode mode)
 {
+    if( GameStatus != NoStatus )
+        {
+        qCWarning(engine()) << "change mode forbidden.";
+        return;
+        }
     GameMode = mode;
 }
 
@@ -52,7 +72,43 @@ void GameEngine::setGameStatus(Status stat)
     GameStatus = stat;
 }
 
-// TODO add lots of stuff
+void GameEngine::startGame()
+{
+    //case where game can't be started
+    if ( GameStatus != NoStatus )
+        {
+        qCWarning(engine()) << "can't start game when another game is running.";
+        return;
+        }
+
+    if ( GameMode == Nomode )
+        {
+        qCWarning(engine()) << "can't start new game if no game mode is set.";
+        return;
+        }
+
+    //lauch the appropriate startup
+    switch (GameMode)
+        {
+        case Free:
+
+            break;
+
+        case Solo:
+            break;
+
+        case Local:
+            break;
+
+        case Online:
+            break;
+
+        default:
+            qCWarning(engine()) << "incoherent state of game engine.";
+            break;
+        }
+}
+
 void GameEngine::togglePause()
 {
     switch (GameStatus)
@@ -67,70 +123,32 @@ void GameEngine::togglePause()
             emit gameWake();
             break;
 
-        case Unstable:
-            qDebug() << "something wrong the game goes buggy";
-            break;
-
         default:
-            break;
+            qCWarning(engine()) << "incohrent toggle pause request when no game is running.";
         }
 }
 
-// TODO add lots of stuff
-void GameEngine::startGame()
+//procedure de cloture de fin de partie.
+void GameEngine::endGame()
 {
-    switch (GameMode)
-        {
-        case Nomode:
-            break;
-
-        case Free:
-
-            break;
-
-        case Solo:
-            break;
-
-        case Online:
-            break;
-
-        default:
-            break;
-        }
+    setGameStatus(NoStatus);
+    return;
 }
 
-void GameEngine::restartGame()
-{
-
-}
-
-void GameEngine::loadProfile()
-{
-
-}
-
-// one player quit, abord the game
+//if a player quit the game, end the game
 void GameEngine::playerQuit()
 {
-    abordGame();
+    endGame();
 }
 
-// when the two players abdiques the game end
-void GameEngine::playerAbdique()
-{
-
-}
-
-void GameEngine::abordGame()
-{
-
-}
-
-// if p == nul on considère que le joueur veut en fait passer son tour
+/*------------------------------------------------*/
+/*             IN GAME PROCEDURES                 */
+/*------------------------------------------------*/
 void GameEngine::playerPlay(QPoint p)
 {
     if (p.isNull())
         {
+        // si p == null on considère que le joueur veut en fait passer son tour
         // on ne fait que le changement de trait.
         emit activePlayerChanged();
         }
@@ -160,12 +178,6 @@ void GameEngine::backTrackPlay()
 
 }
 
-// procedure de cloture de fin de partie.
-void GameEngine::endGame()
-{
-
-}
-
 void GameEngine::savePosition()
 {
     // delegate save to the import/export object
@@ -178,13 +190,7 @@ void GameEngine::loadPosition()
     // and wait for end of task ans then emit ready state ?
 }
 
-void GameEngine::changeGameMod()
-{
-    // maybe usefull as private slot ??
-
-}
-
-GameEngine::~GameEngine()
+void GameEngine::loadProfile()
 {
 
 }
